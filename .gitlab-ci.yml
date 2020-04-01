@@ -5,6 +5,15 @@ stages:
   - 构建
   - 存档
 
+variables:
+  MAVEN_CLI_OPTS: "-s .m2/settings.xml --batch-mode"
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+cache:
+  paths:
+    - .m2/repository/
+    - target/
+
 Preparing:
   stage: 准备构建
   script:

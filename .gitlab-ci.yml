@@ -1,0 +1,25 @@
+image: maven
+
+stages:
+  - 准备构建
+  - 构建
+  - 存档
+
+Preparing:
+  stage: 准备构建
+  script:
+    - mvn clean
+    - mvn clean package
+
+Build:
+  stage: 构建
+  script:
+    - mvn compile
+
+Packaging:
+  stage: 存档
+  script:
+    - mvn package
+  artifacts:
+    paths:
+      - targets/*.jar

@@ -6,7 +6,7 @@
 
     <groupId>network.meikai.mc</groupId>
     <artifactId>uuz-selfplay-bot</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1-SNAPSHOT-Build-${buildNumber}</version>
     <build>
         <plugins>
             <plugin>
@@ -15,6 +15,24 @@
                 <configuration>
                     <source>7</source>
                     <target>7</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <doCheck>true</doCheck>
+                    <doUpdate>true</doUpdate>
                 </configuration>
             </plugin>
 

@@ -6,7 +6,7 @@
 
     <groupId>network.meikai.mc</groupId>
     <artifactId>uuz-selfplay-bot</artifactId>
-    <version>0.1-SNAPSHOT-Build-${buildNumber}</version>
+    <version>0.1-SNAPSHOT-Build-${BUILD_NUMBER}</version>
     <build>
         <plugins>
             <plugin>

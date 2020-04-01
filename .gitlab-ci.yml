@@ -17,18 +17,18 @@ cache:
 Preparing:
   stage: 准备构建
   script:
-    - mvn clean
-    - mvn clean package
+    - mvn $MAVEN_CLI_OPTS clean
+    - mvn $MAVEN_CLI_OPTS clean package
 
 Build:
   stage: 构建
   script:
-    - mvn compile
+    - mvn $MAVEN_CLI_OPTS compile
 
 Packaging:
   stage: 存档
   script:
-    - mvn package
+    - mvn $MAVEN_CLI_OPTS package
   artifacts:
     paths:
       - targets/*.jar

@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="uuzselfplaybot" target="1.5" />
+      <module name="uuzselfplaybot" target="6" />
     </bytecodeTargetLevel>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
@@ -20,12 +20,26 @@
     </profile>
     <version value="1.0" />
   </component>
+  <component name="MCPluginDebuggerConfig">
+    <option name="serverJarFile" value="D:\Java开发\Bots\uuzselfplaybot" />
+    <option name="pluginJarFile" value="D:\Java开发\Bots\uuzselfplaybot" />
+    <option name="pluginName" value="EX" />
+    <option name="host" value="localhost" />
+    <option name="port" value="9000" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
+  </component>
+  <component name="ProjectDictionaryState">
+    <dictionary name="Administrator">
+      <words>
+        <w>yuyuko</w>
+      </words>
+    </dictionary>
   </component>
   <component name="ProjectModuleManager">
     <modules>
@@ -34,5 +48,65 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="jdk1.8.0_212" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
+  <component name="libraryTable">
+    <library name="Maven: com.github.steveice10:mcauthlib:1.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/mcauthlib/1.0/mcauthlib-1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/mcauthlib/1.0/mcauthlib-1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/mcauthlib/1.0/mcauthlib-1.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.github.steveice10:mcprotocollib:1.12.2-2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/mcprotocollib/1.12.2-2/mcprotocollib-1.12.2-2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/mcprotocollib/1.12.2-2/mcprotocollib-1.12.2-2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/mcprotocollib/1.12.2-2/mcprotocollib-1.12.2-2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.github.steveice10:opennbt:1.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/opennbt/1.0/opennbt-1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/opennbt/1.0/opennbt-1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/opennbt/1.0/opennbt-1.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.github.steveice10:packetlib:1.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/packetlib/1.2/packetlib-1.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/packetlib/1.2/packetlib-1.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/packetlib/1.2/packetlib-1.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: io.netty:netty-all:4.1.20.Final">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.20.Final/netty-all-4.1.20.Final.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.20.Final/netty-all-4.1.20.Final-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.20.Final/netty-all-4.1.20.Final-sources.jar!/" />
+      </SOURCES>
+    </library>
   </component>
 </project>

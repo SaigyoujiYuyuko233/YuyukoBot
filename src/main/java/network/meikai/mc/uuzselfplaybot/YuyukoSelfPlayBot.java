@@ -19,11 +19,13 @@ public class YuyukoSelfPlayBot {
     private static final boolean VERIFY_USERS = false;
 //    private static final String HOST = "218.93.206.47";
 //    private static final int PORT = 2705;
+    private static final String BUILD_NUMBER = "$CI_JOB_ID";
 
     private static final String HOST = "127.0.0.1";
     private static final int PORT = 25565;
 
     public static void main(String[] arg) {
+        System.out.println(BUILD_NUMBER);
 
         MinecraftProtocol protocol = new MinecraftProtocol("test");
         final Client client = new Client(HOST, PORT, protocol, new TcpSessionFactory());

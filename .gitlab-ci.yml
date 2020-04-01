@@ -6,7 +6,7 @@ stages:
   - 存档
 
 variables:
-  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  MAVEN_OPTS: "-Dmaven.repo.local=/cache"
 
 cache:
   paths:

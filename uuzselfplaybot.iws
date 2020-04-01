@@ -38,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/YuyukoSelfPlayBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="53" column="176" selection-start-line="53" selection-start-column="176" selection-end-line="53" selection-end-column="176" />
+            <state relative-caret-position="326">
+              <caret line="49" column="48" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -234,12 +234,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585701395258</updated>
-      <workItem from="1585701399177" duration="23761000" />
+      <workItem from="1585701399177" duration="24562000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23761000" />
+    <option name="totallyTimeSpent" value="24562000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -260,7 +260,7 @@
       <window_info id="Favorites" sideWeight="0.50161815" side_tool="true" weight="0.25" />
       <window_info id="MCDebugConsole" sideWeight="0.5015432" side_tool="true" weight="0.25" />
       <window_info id="设计器" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49845678" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49845678" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" sideWeight="0.5015432" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.329718" />
@@ -274,7 +274,7 @@
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="12" visible="true" weight="0.29718006" />
+      <window_info active="true" anchor="bottom" id="Run" order="12" visible="true" weight="0.29718006" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.329718" />
       <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Capture Analysis" />
@@ -440,8 +440,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/YuyukoSelfPlayBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="53" column="176" selection-start-line="53" selection-start-column="176" selection-end-line="53" selection-end-column="176" />
+        <state relative-caret-position="326">
+          <caret line="49" column="48" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

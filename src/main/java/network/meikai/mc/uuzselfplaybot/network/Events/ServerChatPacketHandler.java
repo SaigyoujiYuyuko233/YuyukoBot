@@ -1,19 +1,21 @@
 package network.meikai.mc.uuzselfplaybot.network.Events;
 
 import com.github.steveice10.mc.protocol.packet.ingame.server.ServerChatPacket;
-import com.github.steveice10.mc.protocol.packet.ingame.server.ServerJoinGamePacket;
 import com.github.steveice10.packetlib.event.session.PacketReceivedEvent;
 import network.meikai.mc.uuzselfplaybot.GlobalVars;
 import network.meikai.mc.uuzselfplaybot.network.EventHandler;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.util.Arrays;
 import java.util.regex.Pattern;
 
 public class ServerChatPacketHandler {
 
     public void handle(PacketReceivedEvent evt, ServerChatPacket packet) {
+        Logger logger = LogManager.getLogger("ServerChat");
         String message = packet.getMessage().getFullText();
-        EventHandler.EVENT_LOGGER.info(message);
+
+        logger.info(message);
 
         String sender = "";
         String humanSenderPattern = "^(<)[A-Za-z0-9\\-_.]+(>\\s)[A-Za-z0-9\\-_.\\s!?]+";

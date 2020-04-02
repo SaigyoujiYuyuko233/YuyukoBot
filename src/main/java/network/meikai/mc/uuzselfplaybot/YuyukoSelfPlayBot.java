@@ -1,6 +1,7 @@
 package network.meikai.mc.uuzselfplaybot;
 
-import com.github.tomaslanger.chalk.Chalk;
+import org.fusesource.jansi.Ansi;
+import org.fusesource.jansi.AnsiConsole;
 
 import java.io.IOException;
 import java.util.jar.Attributes;
@@ -22,21 +23,19 @@ public class YuyukoSelfPlayBot {
         GlobalVars.GIT_REVERSION = mfAttributes.getValue("implementation-git-sha");
         GlobalVars.BUILD = mfAttributes.getValue("implementation-build");
 
-        Chalk.setColorEnabled(true);
+        AnsiConsole.systemInstall();
 
-        System.out.println(Chalk.on("__   __                 _         ____   ___ _____\n" +
+        System.out.println(Ansi.ansi().fgBright(Ansi.Color.GREEN).a("__   __                 _         ____   ___ _____\n" +
                 "\\ \\ / /   _ _   _ _   _| | _____ | __ ) / _ \\_   _|\n" +
                 " \\ V / | | | | | | | | | |/ / _ \\|  _ \\| | | || |\n" +
                 "  | || |_| | |_| | |_| |   < (_) | |_) | |_| || |\n" +
                 "  |_| \\__,_|\\__, |\\__,_|_|\\_\\___/|____/ \\___/ |_|\n" +
-                "            |___/\n").green());
+                "            |___/\n"));
 
-        System.out.println("[+] Version: " + GlobalVars.VERSION + "(" + GlobalVars.GIT_BRANCH + ") Git-" + GlobalVars.GIT_REVERSION + " Build: " + GlobalVars.BUILD);
+        System.out.println("[+] Version: " + GlobalVars.VERSION + "(" + GlobalVars.GIT_BRANCH + ") Git-" + GlobalVars.GIT_REVERSION + " Build: " + GlobalVars.BUILD + "\n");
 
-        GlobalVars.LOGGER.info("Using BotName:" + GlobalVars.BOTNAME);
-        GlobalVars.LOGGER.info("Dst Server | " + GlobalVars.HOST + ":" + GlobalVars.PORT);
-
-
+        GlobalVars.MAIN_LOGGER.info("Using BotName @" + GlobalVars.BOTNAME);
+        GlobalVars.MAIN_LOGGER.info("Dst Server - " + GlobalVars.HOST + ":" + GlobalVars.PORT);
     }
 
 }

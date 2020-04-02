@@ -20,7 +20,7 @@ public class GlobalVars {
     public static final String BOTNAME = "DreamyYuyuko233";
 
     // Classes
-    public static final Logger LOGGER = LogManager.getLogger("YuyukoBot #" + BOTNAME + "");
+    public static final Logger MAIN_LOGGER = LogManager.getLogger("YuyukoBot(" + BOTNAME + ")");
 
     // bot
     public static final MinecraftProtocol PROTOCOL = new MinecraftProtocol(BOTNAME);

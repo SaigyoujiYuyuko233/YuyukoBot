@@ -3,6 +3,7 @@ package network.meikai.mc.uuzselfplaybot;
 import com.github.steveice10.mc.protocol.MinecraftProtocol;
 import com.github.steveice10.packetlib.Client;
 import com.github.steveice10.packetlib.tcp.TcpSessionFactory;
+import network.meikai.mc.uuzselfplaybot.behavior.BotMoving;
 import network.meikai.mc.uuzselfplaybot.network.EventHandler;
 import network.meikai.mc.uuzselfplaybot.network.Events.ServerJoinGamePacketHandler;
 import network.meikai.mc.uuzselfplaybot.network.Events.ServerPlayerPositionRotationPacketHandler;
@@ -36,7 +37,11 @@ public class GlobalVars {
     public static final ServerJoinGamePacketHandler serverJoinGamePacketHandler = new ServerJoinGamePacketHandler();
     public static final ServerPlayerPositionRotationPacketHandler serverPlayerPositionRotationPacketHandler = new ServerPlayerPositionRotationPacketHandler();
 
+    // Bot behavior
+    public static final BotMoving BotMoving = new BotMoving();
+
     // Bot position
+    public static boolean canMove = false;
     public static Double BotX = 0D;
     public static Double BotY = 0D;
     public static Double BotZ = 0D;

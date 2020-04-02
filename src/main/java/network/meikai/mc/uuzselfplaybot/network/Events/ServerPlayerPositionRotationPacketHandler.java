@@ -1,6 +1,7 @@
 package network.meikai.mc.uuzselfplaybot.network.Events;
 
 import com.github.steveice10.mc.protocol.packet.ingame.client.player.ClientPlayerPositionRotationPacket;
+import com.github.steveice10.mc.protocol.packet.ingame.client.world.ClientTeleportConfirmPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.entity.player.ServerPlayerPositionRotationPacket;
 import com.github.steveice10.packetlib.event.session.PacketReceivedEvent;
 import network.meikai.mc.uuzselfplaybot.GlobalVars;
@@ -13,6 +14,8 @@ import network.meikai.mc.uuzselfplaybot.network.EventHandler;
 public class ServerPlayerPositionRotationPacketHandler {
 
     public void handle(PacketReceivedEvent evt, ServerPlayerPositionRotationPacket packet) {
+
+        evt.getSession().send(new ClientTeleportConfirmPacket(packet.getTeleportId()));
         evt.getSession().send(new ClientPlayerPositionRotationPacket(
                 true,
                 packet.getX(),
@@ -37,6 +40,8 @@ public class ServerPlayerPositionRotationPacketHandler {
         GlobalVars.BotZ = packet.getZ();
         GlobalVars.BotYaw = packet.getYaw();
         GlobalVars.BotPitch = packet.getPitch();
+
+        GlobalVars.canMove = true;
     }
 
 }

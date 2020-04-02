@@ -6,7 +6,14 @@
 
     <groupId>network.meikai.mc</groupId>
     <artifactId>uuz-selfplay-bot</artifactId>
-    <version>${CI_COMMIT_TAG}-SNAPSHOT-${CI_COMMIT_SHORT_SHA}-build-${CI_PIPELINE_ID}</version>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <log4j2.version>2.6.2</log4j2.version>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -15,6 +22,37 @@
                 <configuration>
                     <source>7</source>
                     <target>7</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <archive>
+                        <!-- will put the entries into META-INF/MANIFEST.MF file -->
+                        <manifestentries>
+                            <implementation-version>${project.version}</implementation-version>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <implementation-build>${CI_PIPELINE_ID}</implementation-build>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <implementation-git-branch>${CI_COMMIT_REF_NAME}</implementation-git-branch>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <implementation-git-sha>${CI_COMMIT_SHORT_SHA}</implementation-git-sha>
+                        </manifestentries>
+                    </archive>
+
+                    <doCheck>true</doCheck>
+                    <doUpdate>true</doUpdate>
                 </configuration>
             </plugin>
 
@@ -48,12 +86,6 @@
 
         </plugins>
     </build>
-    <packaging>jar</packaging>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <log4j2.version>2.6.2</log4j2.version>
-    </properties>
 
     <repositories>
         <repository>

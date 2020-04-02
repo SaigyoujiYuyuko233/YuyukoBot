@@ -6,10 +6,10 @@ import org.apache.logging.log4j.Logger;
 public class GlobalVars {
 
     // app info
-    public static final String VERSION = "0.1-SNAPSHOT";
-    public static final String GIT_BRANCH = "${CI_COMMIT_REF_NAME}";
-    public static final String GIT_REVERSION = "${CI_COMMIT_SHORT_SHA}";
-    public static final String BUILD = "${CI_PIPELINE_ID}";
+    public static String VERSION = "";
+    public static String GIT_BRANCH = "";
+    public static String GIT_REVERSION = "";
+    public static String BUILD = "";
 
     // server connect
     public static final String HOST = "127.0.0.1";

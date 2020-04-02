@@ -100,15 +100,15 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/packetlib/1.2/packetlib-1.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.github.tomas-langer:chalk:1.0.3-SNAPSHOT">
+    <library name="Maven: com.github.tomas-langer:chalk:1.0.2">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/github/tomas-langer/chalk/1.0.3-SNAPSHOT/chalk-1.0.3-SNAPSHOT.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/tomas-langer/chalk/1.0.2/chalk-1.0.2.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/github/tomas-langer/chalk/1.0.3-SNAPSHOT/chalk-1.0.3-SNAPSHOT-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/tomas-langer/chalk/1.0.2/chalk-1.0.2-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/github/tomas-langer/chalk/1.0.3-SNAPSHOT/chalk-1.0.3-SNAPSHOT-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/tomas-langer/chalk/1.0.2/chalk-1.0.2-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: io.netty:netty-all:4.1.20.Final">
@@ -142,6 +142,50 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-core/2.6.2/log4j-core-2.6.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.fusesource.hawtjni:hawtjni-runtime:1.11">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/hawtjni/hawtjni-runtime/1.11/hawtjni-runtime-1.11.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/hawtjni/hawtjni-runtime/1.11/hawtjni-runtime-1.11-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/hawtjni/hawtjni-runtime/1.11/hawtjni-runtime-1.11-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.fusesource.jansi:jansi-native:1.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi-native/1.5/jansi-native-1.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi-native/1.5/jansi-native-1.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi-native/1.5/jansi-native-1.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.fusesource.jansi:jansi-native:windows32:1.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi-native/1.5/jansi-native-1.5-windows32.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi-native/1.5/jansi-native-1.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi-native/1.5/jansi-native-1.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.fusesource.jansi:jansi-native:windows64:1.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi-native/1.5/jansi-native-1.5-windows64.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi-native/1.5/jansi-native-1.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi-native/1.5/jansi-native-1.5-sources.jar!/" />
       </SOURCES>
     </library>
   </component>

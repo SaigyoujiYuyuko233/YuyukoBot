@@ -30,7 +30,7 @@ public class YuyukoSelfPlayBot {
                 " \\ V / | | | | | | | | | |/ / _ \\|  _ \\| | | || |\n" +
                 "  | || |_| | |_| | |_| |   < (_) | |_) | |_| || |\n" +
                 "  |_| \\__,_|\\__, |\\__,_|_|\\_\\___/|____/ \\___/ |_|\n" +
-                "            |___/\n"));
+                "            |___/\n").reset());
 
         System.out.println("[+] Version: " + GlobalVars.VERSION + "(" + GlobalVars.GIT_BRANCH + ") Git-" + GlobalVars.GIT_REVERSION + " Build: " + GlobalVars.BUILD + "\n");
 

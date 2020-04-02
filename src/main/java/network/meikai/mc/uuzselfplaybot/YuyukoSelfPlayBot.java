@@ -8,8 +8,6 @@ import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
 public class YuyukoSelfPlayBot {
-//    private static final String HOST = "218.93.206.47";
-//    private static final int PORT = 2705;
 
     public static void main(String[] arg) throws IOException {
 
@@ -32,7 +30,13 @@ public class YuyukoSelfPlayBot {
                 "  |_| \\__,_|\\__, |\\__,_|_|\\_\\___/|____/ \\___/ |_|\n" +
                 "            |___/\n").reset());
 
-        System.out.println("[+] Version: " + GlobalVars.VERSION + "(" + GlobalVars.GIT_BRANCH + ") Git-" + GlobalVars.GIT_REVERSION + " Build: " + GlobalVars.BUILD + "\n");
+        String logPrefix = "[" + Ansi.ansi().fgBright(Ansi.Color.GREEN).a("+") + "] ";
+
+        System.out.println(logPrefix + Ansi.ansi().fgBright(Ansi.Color.BLUE).a(
+            "Version: " + GlobalVars.VERSION + "(" + GlobalVars.GIT_BRANCH + ") Git-" + GlobalVars.GIT_REVERSION + " Build: " + GlobalVars.BUILD
+            )
+        );
+        System.out.println(logPrefix + Ansi.ansi().fgBright(Ansi.Color.BLUE).a("Author: 幽幽子 | QQ: 3558168775 | Github: SaigyoujiYuyuko233 \n"));
 
         GlobalVars.MAIN_LOGGER.info("Using BotName @" + GlobalVars.BOTNAME);
         GlobalVars.MAIN_LOGGER.info("Dst Server - " + GlobalVars.HOST + ":" + GlobalVars.PORT);

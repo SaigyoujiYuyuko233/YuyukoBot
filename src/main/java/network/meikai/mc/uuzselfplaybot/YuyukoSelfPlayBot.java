@@ -2,12 +2,26 @@ package network.meikai.mc.uuzselfplaybot;
 
 import com.github.tomaslanger.chalk.Chalk;
 
+import java.io.IOException;
+import java.util.jar.Attributes;
+import java.util.jar.Manifest;
+
 public class YuyukoSelfPlayBot {
 //    private static final String HOST = "218.93.206.47";
 //    private static final int PORT = 2705;
 
-    public static void main(String[] arg) {
-        Chalk.setColorEnabled(true);
+    public static void main(String[] arg) throws IOException {
+
+        // read version
+        Manifest mf = new Manifest();
+        mf.read(Thread.currentThread().getContextClassLoader().getResourceAsStream("META-INF/MANIFEST.MF"));
+        Attributes atts = mf.getMainAttributes();
+
+        GlobalVars.VERSION = atts.getValue("implementation-version");
+        GlobalVars.GIT_BRANCH = atts.getValue("implementation-git-branch");
+        GlobalVars.GIT_REVERSION = atts.getValue("implementation-git-sha");
+        GlobalVars.BUILD = atts.getValue("implementation-build");
+
 
         System.out.println(Chalk.on("__   __                 _         ____   ___ _____\n" +
                 "\\ \\ / /   _ _   _ _   _| | _____ | __ ) / _ \\_   _|\n" +
@@ -17,6 +31,10 @@ public class YuyukoSelfPlayBot {
                 "            |___/\n").green());
 
         System.out.println("[+] Version: " + GlobalVars.VERSION + "(" + GlobalVars.GIT_BRANCH + ") Git-" + GlobalVars.GIT_REVERSION + " Build: " + GlobalVars.BUILD);
+
+        GlobalVars.LOGGER.info("Using BotName:" + GlobalVars.BOTNAME);
+        GlobalVars.LOGGER.info("Dst Server | " + GlobalVars.HOST + ":" + GlobalVars.PORT);
+
 
     }
 

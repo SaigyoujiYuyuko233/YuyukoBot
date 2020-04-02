@@ -12,16 +12,10 @@ public class YuyukoSelfPlayBot {
 
     public static void main(String[] arg) throws IOException {
 
-        // read version
-        Manifest mf = new Manifest();
-        mf.read(Thread.currentThread().getContextClassLoader().getResourceAsStream("META-INF/MANIFEST.MF"));
-        Attributes atts = mf.getMainAttributes();
+        // read manifest
+        GlobalVars.MANIFEST.read(Thread.currentThread().getContextClassLoader().getResourceAsStream("META-INF/MANIFEST.MF"));
 
-        GlobalVars.VERSION = atts.getValue("implementation-version");
-        GlobalVars.GIT_BRANCH = atts.getValue("implementation-git-branch");
-        GlobalVars.GIT_REVERSION = atts.getValue("implementation-git-sha");
-        GlobalVars.BUILD = atts.getValue("implementation-build");
-
+        Chalk.setColorEnabled(true);
 
         System.out.println(Chalk.on("__   __                 _         ____   ___ _____\n" +
                 "\\ \\ / /   _ _   _ _   _| | _____ | __ ) / _ \\_   _|\n" +

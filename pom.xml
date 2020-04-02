@@ -26,17 +26,9 @@
             </plugin>
 
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>buildnumber-maven-plugin</artifactId>
-                <version>1.4</version>
-                <executions>
-                    <execution>
-                        <phase>none</phase>
-                        <goals>
-                            <goal>create</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <artifactId>maven-jar-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <version>3.2.0</version>
                 <configuration>
                     <archive>
                         <!-- will put the entries into META-INF/MANIFEST.MF file -->
@@ -50,9 +42,6 @@
                             <implementation-git-sha>${CI_COMMIT_SHORT_SHA}</implementation-git-sha>
                         </manifestentries>
                     </archive>
-
-                    <doCheck>true</doCheck>
-                    <doUpdate>true</doUpdate>
                 </configuration>
             </plugin>
 

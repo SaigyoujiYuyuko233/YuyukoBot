@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 public class GlobalVars {
 
     // app info
-    public static final String VERSION = "$project.version";
+    public static final String VERSION = "$CI_COMMIT_TAG";
     public static final String GIT_BRANCH = "$CI_COMMIT_REF_NAME";
     public static final String GIT_REVERSION = "$CI_COMMIT_SHORT_SHA";
     public static final String BUILD = "$CI_JOB_ID";

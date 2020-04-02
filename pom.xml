@@ -26,24 +26,6 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <!-- will put the entries into META-INF/MANIFEST.MF file -->
-                    <manifestentries>
-                        <implementation-version>${project.version}</implementation-version>
-                        <!--suppress UnresolvedMavenProperty -->
-                        <implementation-build>${CI_PIPELINE_ID}</implementation-build>
-                        <!--suppress UnresolvedMavenProperty -->
-                        <implementation-git-branch>${CI_COMMIT_REF_NAME}</implementation-git-branch>
-                        <!--suppress UnresolvedMavenProperty -->
-                        <implementation-git-sha>${CI_COMMIT_SHORT_SHA}</implementation-git-sha>
-                    </manifestentries>
-                </configuration>
-            </plugin>
-
-            <plugin>
                 <!-- 依赖自动打包 -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -52,6 +34,14 @@
                     <archive>
                         <manifest>
                             <mainClass>network.meikai.mc.uuzselfplaybot.YuyukoSelfPlayBot</mainClass>
+                            <implementation-version>${project.version}</implementation-version>
+
+                            <!--suppress UnresolvedMavenProperty -->
+                            <implementation-build>${CI_PIPELINE_ID}</implementation-build>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <implementation-git-branch>${CI_COMMIT_REF_NAME}</implementation-git-branch>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <implementation-git-sha>${CI_COMMIT_SHORT_SHA}</implementation-git-sha>
                         </manifest>
                     </archive>
                     <descriptorRefs>

@@ -3,6 +3,7 @@ package network.meikai.mc.uuzselfplaybot.network.Events;
 import com.github.steveice10.mc.protocol.packet.ingame.client.player.ClientPlayerPositionRotationPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.entity.player.ServerPlayerPositionRotationPacket;
 import com.github.steveice10.packetlib.event.session.PacketReceivedEvent;
+import network.meikai.mc.uuzselfplaybot.GlobalVars;
 import network.meikai.mc.uuzselfplaybot.network.EventHandler;
 
 /**
@@ -29,6 +30,13 @@ public class ServerPlayerPositionRotationPacketHandler {
                 packet.getYaw() + "," +
                 packet.getPitch() + ")"
         );
+
+        // sync position
+        GlobalVars.BotX = packet.getX();
+        GlobalVars.BotY = packet.getY();
+        GlobalVars.BotZ = packet.getZ();
+        GlobalVars.BotYaw = packet.getYaw();
+        GlobalVars.BotPitch = packet.getPitch();
     }
 
 }

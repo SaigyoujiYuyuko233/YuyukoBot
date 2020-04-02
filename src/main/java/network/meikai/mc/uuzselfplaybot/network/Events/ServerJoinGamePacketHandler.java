@@ -6,6 +6,7 @@ import com.github.steveice10.packetlib.event.session.PacketReceivedEvent;
 public class ServerJoinGamePacketHandler {
 
     public void handle(PacketReceivedEvent evt, ServerJoinGamePacket packet) {
+
     }
 
 }

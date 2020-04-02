@@ -36,4 +36,11 @@ public class GlobalVars {
     public static final ServerJoinGamePacketHandler serverJoinGamePacketHandler = new ServerJoinGamePacketHandler();
     public static final ServerPlayerPositionRotationPacketHandler serverPlayerPositionRotationPacketHandler = new ServerPlayerPositionRotationPacketHandler();
 
+    // Bot position
+    public static Double BotX = 0D;
+    public static Double BotY = 0D;
+    public static Double BotZ = 0D;
+    public static Float BotYaw = 0F;
+    public static Float BotPitch = 0F;
+
 }

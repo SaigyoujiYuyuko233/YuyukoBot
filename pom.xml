@@ -6,7 +6,7 @@
 
     <groupId>network.meikai.mc</groupId>
     <artifactId>uuz-selfplay-bot</artifactId>
-    <version>${CI_COMMIT_TAG}-${$CI_COMMIT_SHORT_SHA}-${CI_JOB_ID}</version>
+    <version>build-${CI_JOB_ID}</version>
     <build>
         <plugins>
             <plugin>

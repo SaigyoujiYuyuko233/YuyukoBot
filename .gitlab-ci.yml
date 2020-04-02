@@ -16,4 +16,4 @@ Build:
     - mvn $MAVEN_CLI_OPTS package
   artifacts:
     paths:
-      - $CI_PROJECT_DIR/targets/*.jar
+      - $CI_PROJECT_DIR/targets/.jar

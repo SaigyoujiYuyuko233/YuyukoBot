@@ -6,7 +6,7 @@
 
     <groupId>network.meikai.mc</groupId>
     <artifactId>uuz-selfplay-bot</artifactId>
-    <version>build-${CI_JOB_ID}</version>
+    <version>build-${CI_PIPELINE_ID}</version>
     <build>
         <plugins>
             <plugin>

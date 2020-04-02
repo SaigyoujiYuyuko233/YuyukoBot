@@ -36,6 +36,13 @@ public class YuyukoSelfPlayBot {
 
         GlobalVars.MAIN_LOGGER.info("Using BotName @" + GlobalVars.BOTNAME);
         GlobalVars.MAIN_LOGGER.info("Dst Server - " + GlobalVars.HOST + ":" + GlobalVars.PORT);
+
+        GlobalVars.MAIN_LOGGER.info("Preparing Network Handler");
+        GlobalVars.CLIENT.getSession().addListener(GlobalVars.eventHandler);
+
+        GlobalVars.MAIN_LOGGER.info("Try to connect to server...");
+        GlobalVars.CLIENT.getSession().connect();
+
     }
 
 }

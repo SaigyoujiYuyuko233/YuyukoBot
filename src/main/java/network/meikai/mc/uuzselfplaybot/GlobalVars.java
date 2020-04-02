@@ -3,6 +3,9 @@ package network.meikai.mc.uuzselfplaybot;
 import com.github.steveice10.mc.protocol.MinecraftProtocol;
 import com.github.steveice10.packetlib.Client;
 import com.github.steveice10.packetlib.tcp.TcpSessionFactory;
+import network.meikai.mc.uuzselfplaybot.network.EventHandler;
+import network.meikai.mc.uuzselfplaybot.network.Events.ServerJoinGamePacketHandler;
+import network.meikai.mc.uuzselfplaybot.network.Events.ServerPlayerPositionRotationPacketHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,5 +29,11 @@ public class GlobalVars {
     public static final MinecraftProtocol PROTOCOL = new MinecraftProtocol(BOTNAME);
     public static final TcpSessionFactory TCP_SESSION_FACTORY = new TcpSessionFactory();
     public static final Client CLIENT = new Client(HOST, PORT, PROTOCOL, TCP_SESSION_FACTORY);
+
+    // Network Handle
+    public static final EventHandler eventHandler = new EventHandler();
+
+    public static final ServerJoinGamePacketHandler serverJoinGamePacketHandler = new ServerJoinGamePacketHandler();
+    public static final ServerPlayerPositionRotationPacketHandler serverPlayerPositionRotationPacketHandler = new ServerPlayerPositionRotationPacketHandler();
 
 }

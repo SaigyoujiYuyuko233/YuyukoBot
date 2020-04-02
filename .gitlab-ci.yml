@@ -11,7 +11,7 @@ cache:
     - .m2/repository/
     - target/
 
-Packaging:
+Build:
   stage: 构建
   script:
     - mvn $MAVEN_CLI_OPTS clean package

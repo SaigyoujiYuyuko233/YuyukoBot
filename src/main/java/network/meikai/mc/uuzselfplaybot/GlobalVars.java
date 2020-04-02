@@ -34,9 +34,6 @@ public class GlobalVars {
     // Network Handle
     public static final EventHandler eventHandler = new EventHandler();
 
-    public static final ServerJoinGamePacketHandler serverJoinGamePacketHandler = new ServerJoinGamePacketHandler();
-    public static final ServerPlayerPositionRotationPacketHandler serverPlayerPositionRotationPacketHandler = new ServerPlayerPositionRotationPacketHandler();
-
     // Bot behavior
     public static final BotMoving BotMoving = new BotMoving();
 

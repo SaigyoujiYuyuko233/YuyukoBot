@@ -8,8 +8,7 @@ variables:
 
 cache:
   paths:
-    - .m2/repository/
-    - target/
+    - /cache
 
 Build:
   stage: 构建
@@ -17,4 +16,4 @@ Build:
     - mvn $MAVEN_CLI_OPTS clean package
   artifacts:
     paths:
-      - targets/*.jar
+      - $CI_PROJECT_DIR/targets/*.jar

@@ -30,13 +30,13 @@ public class YuyukoSelfPlayBot {
                 "  |_| \\__,_|\\__, |\\__,_|_|\\_\\___/|____/ \\___/ |_|\n" +
                 "            |___/\n").reset());
 
-        String logPrefix = "[" + Ansi.ansi().fgBright(Ansi.Color.GREEN).a("+") + "] ";
+        String logPrefix = "[" + Ansi.ansi().fgBright(Ansi.Color.GREEN).a("+").reset() + "] ";
 
-        System.out.println(logPrefix + Ansi.ansi().fgBright(Ansi.Color.BLUE).a(
+        System.out.println(logPrefix + Ansi.ansi().fgBright(Ansi.Color.CYAN).a(
             "Version: " + GlobalVars.VERSION + "(" + GlobalVars.GIT_BRANCH + ") Git-" + GlobalVars.GIT_REVERSION + " Build: " + GlobalVars.BUILD
-            )
+            ).reset()
         );
-        System.out.println(logPrefix + Ansi.ansi().fgBright(Ansi.Color.BLUE).a("Author: 幽幽子 | QQ: 3558168775 | Github: SaigyoujiYuyuko233 \n"));
+        System.out.println(logPrefix + Ansi.ansi().fgBright(Ansi.Color.CYAN).a("Author: 幽幽子 | QQ: 3558168775 | Github: SaigyoujiYuyuko233 \n").reset());
 
         GlobalVars.MAIN_LOGGER.info("Using BotName @" + GlobalVars.BOTNAME);
         GlobalVars.MAIN_LOGGER.info("Dst Server - " + GlobalVars.HOST + ":" + GlobalVars.PORT);

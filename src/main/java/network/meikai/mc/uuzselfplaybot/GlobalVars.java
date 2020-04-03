@@ -17,17 +17,18 @@ public class GlobalVars {
     public static String BUILD = "";
 
     // config
-    public static String HOST = "127.0.0.1";
-    public static int PORT = 25565;
-    public static String BOTNAME = "YuyukoBot";
+    public static String HOST;
+    public static int PORT;
+    public static String BOTNAME;
+    public static String Token;
 
     // Classes
-    public static final Logger MAIN_LOGGER = LogManager.getLogger("YuyukoBot(" + BOTNAME + ")");
+    public static final Logger MAIN_LOGGER = LogManager.getLogger("YuyukoBot");
 
     // bot
-    public static final MinecraftProtocol PROTOCOL = new MinecraftProtocol(BOTNAME);
-    public static final TcpSessionFactory TCP_SESSION_FACTORY = new TcpSessionFactory();
-    public static final Client CLIENT = new Client(HOST, PORT, PROTOCOL, TCP_SESSION_FACTORY);
+    public static MinecraftProtocol PROTOCOL;
+    public static TcpSessionFactory TCP_SESSION_FACTORY;
+    public static Client CLIENT;
 
     // Network Handle
     public static final EventHandler eventHandler = new EventHandler();

@@ -1,7 +1,11 @@
 package network.meikai.mc.uuzselfplaybot;
 
+import com.github.steveice10.mc.protocol.MinecraftProtocol;
+import com.github.steveice10.packetlib.Client;
+import com.github.steveice10.packetlib.tcp.TcpSessionFactory;
 import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.AnsiConsole;
+import picocli.CommandLine;
 
 import java.io.IOException;
 import java.util.jar.Attributes;
@@ -38,8 +42,22 @@ public class YuyukoSelfPlayBot {
         );
         System.out.println(logPrefix + Ansi.ansi().fgBright(Ansi.Color.CYAN).a("Author: 幽幽子 | QQ: 3558168775 | Github: SaigyoujiYuyuko233 \n").reset());
 
+        // 加载cli配置
+        CommandLine commandLine = new CommandLine(new CliConfig());
+        int ret = commandLine.execute(arg);
+
+        if (ret != 0) {
+            System.exit(ret);
+        }
+
         GlobalVars.MAIN_LOGGER.info("Using BotName @" + GlobalVars.BOTNAME);
         GlobalVars.MAIN_LOGGER.info("Dst Server - " + GlobalVars.HOST + ":" + GlobalVars.PORT);
+
+        GlobalVars.MAIN_LOGGER.info("Initiate the bot...");
+        GlobalVars.PROTOCOL = new MinecraftProtocol(GlobalVars.BOTNAME);
+        GlobalVars.TCP_SESSION_FACTORY = new TcpSessionFactory();
+        GlobalVars.CLIENT = new Client(GlobalVars.HOST, GlobalVars.PORT, GlobalVars.PROTOCOL, GlobalVars.TCP_SESSION_FACTORY);
+
 
         GlobalVars.MAIN_LOGGER.info("Preparing Network Handler");
         GlobalVars.CLIENT.getSession().addListener(GlobalVars.eventHandler);

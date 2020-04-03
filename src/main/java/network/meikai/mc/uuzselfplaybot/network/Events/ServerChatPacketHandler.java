@@ -3,6 +3,7 @@ package network.meikai.mc.uuzselfplaybot.network.Events;
 import com.github.steveice10.mc.protocol.packet.ingame.client.ClientChatPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.ServerChatPacket;
 import com.github.steveice10.packetlib.event.session.PacketReceivedEvent;
+import network.meikai.mc.uuzselfplaybot.CliConfig;
 import network.meikai.mc.uuzselfplaybot.GlobalVars;
 import network.meikai.mc.uuzselfplaybot.network.EventHandler;
 import org.apache.logging.log4j.LogManager;

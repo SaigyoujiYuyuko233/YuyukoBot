@@ -45,7 +45,7 @@ public class EventHandler extends SessionAdapter {
 
         // ServerRespawnPacket - Handle
         if ( evt.getPacket() instanceof ServerPlayerHealthPacket) {
-            ServerPlayerHealthPacket packet = (ServerPlayerHealthPacket) evt.getPacket();
+            ServerPlayerHealthPacket packet = evt.getPacket();
 
             // Player respawn
             if ( packet.getHealth() <= 0 ) {

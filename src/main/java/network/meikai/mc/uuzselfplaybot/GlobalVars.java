@@ -19,9 +19,9 @@ public class GlobalVars {
     public static String BUILD = "";
 
     // server connect
-    public static String HOST = "dmcloud.mxmc.me";
-    public static int PORT = 2705;
-    public static String BOTNAME = "DreamyYuyuko";
+    public static String HOST = "127.0.0.1";
+    public static int PORT = 25565;
+    public static String BOTNAME = "YuyukoBot";
 
     // Classes
     public static final Logger MAIN_LOGGER = LogManager.getLogger("YuyukoBot(" + BOTNAME + ")");

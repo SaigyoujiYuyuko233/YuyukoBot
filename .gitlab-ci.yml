@@ -4,11 +4,11 @@ stages:
   - 构建
 
 variables:
-  MAVEN_OPTS: "-Dmaven.repo.local=/cache"
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
 
 cache:
   paths:
-    - /cache
+    - .m2/repository/
 
 Build:
   stage: 构建

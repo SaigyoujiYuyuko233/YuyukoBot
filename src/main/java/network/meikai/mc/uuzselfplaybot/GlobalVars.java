@@ -16,7 +16,7 @@ public class GlobalVars {
     public static String GIT_REVERSION = "";
     public static String BUILD = "";
 
-    // server connect
+    // config
     public static String HOST = "127.0.0.1";
     public static int PORT = 25565;
     public static String BOTNAME = "YuyukoBot";

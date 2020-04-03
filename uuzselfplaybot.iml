@@ -17,9 +17,7 @@
     <orderEntry type="library" name="Maven: io.netty:netty-all:4.1.20.Final" level="project" />
     <orderEntry type="library" name="Maven: com.github.steveice10:mcauthlib:1.0" level="project" />
     <orderEntry type="library" name="Maven: org.fusesource.jansi:jansi:1.18" level="project" />
-    <orderEntry type="library" name="Maven: commons-configuration:commons-configuration:1.10" level="project" />
-    <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
-    <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: info.picocli:picocli:4.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.6.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-api:2.6.2" level="project" />
   </component>

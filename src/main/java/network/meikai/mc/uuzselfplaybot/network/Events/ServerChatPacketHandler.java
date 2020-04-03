@@ -19,29 +19,56 @@ public class ServerChatPacketHandler {
 
         logger.info(message);
 
-        String sender = "";
+        /*
+         * 判断是否是私聊
+         */
+        boolean isPublic;
+        String isTellPattern = "^(\\[)[A-Za-z0-9\\-_.]+(\\s\\->\\s)[A-Za-z0-9\\-/_.\\s一-龥](\\]\\s)[A-Za-z0-9\\-/_.\\s一-龥]+";
+
+        if ( Pattern.matches(isTellPattern, message) ) {
+            isPublic = false;
+        } else {
+            isPublic = true;
+        }
+
+        /*
+         * 判断 message sender
+         */
+        String sender;
         String humanSenderPattern = "^(<)[A-Za-z0-9\\-_.]+(>\\s)[A-Za-z0-9\\-_.\\s!?]+";
 
-        // 判断 message sender
         if ( Pattern.matches(humanSenderPattern, message) ) {
             sender = message.split(" ")[0];
             sender = sender.replace("<", "");
             sender = sender.replace(">", "");
+        } else if ( !isPublic ) {
+            sender = message.split(" ")[0];
+            sender = sender.replace("[", "");
         } else {
             sender = "Server";
         }
 
         // 获取 去除玩家名的消息
-        String rawMessage = message.replaceAll("^(<)[A-Za-z0-9\\-_.]+(>\\s)", "");
+        String rawMessage;
+        if ( isPublic ) {
+            rawMessage = message.replaceAll("^(<)[A-Za-z0-9\\-_.]+(>\\s)", "");
+        } else {
+            rawMessage = message.replaceAll("^(\\[)[A-Za-z0-9\\-_.]+(\\s\\->\\s)[A-Za-z0-9\\-/_.\\s一-龥](\\]\\s)", "");
+        }
+
+        // 调试
+        logger.debug("isPublic: " + isPublic);
+        logger.debug("Sender: " + sender);
+        logger.debug("RawMessage: " + rawMessage);
 
         /*
          * 发送指令
          */
-        if (Pattern.matches("^(" + GlobalVars.BOTNAME + ")(\\s)(exec)(\\s)[A-Za-z0-9\\-/_.\\s]+", rawMessage) ||
-            Pattern.matches("^(\\[)[A-Za-z0-9\\-_.]+(\\s\\->\\sme\\]\\sexec\\s)[A-Za-z0-9\\-/_.\\s\\u4E00-\\u9FA5]+", rawMessage)) {
+        if ( Pattern.matches("^(exec\\s)[A-Za-z0-9]+(\\s)[A-Za-z0-9\\-/_.\\s\\u4E00-\\u9FA5]+", rawMessage) && !isPublic) {
 
             // 获取指令
-            String command = rawMessage.replaceAll("^(\\[)[A-Za-z0-9\\-_.]+(\\s\\->\\sme\\]\\sexec\\s)", "");
+            String command = rawMessage.replaceAll("^(exec\\s)", "");
+            command = command.replace(GlobalVars.Token + " ", "");
 
             // 执行
             evt.getSession().send(new ClientChatPacket(command));
@@ -53,7 +80,7 @@ public class ServerChatPacketHandler {
         /*
          * 移动指令
          */
-        if (Pattern.matches("^(move)(\\s)[\\-0-9]+(\\s)[\\-0-9]+(\\s)[\\-0-9]+", rawMessage)) {
+        if (Pattern.matches("^(move)(\\s)[\\-0-9]+(\\s)[\\-0-9]+(\\s)[\\-0-9]+", rawMessage) && !isPublic) {
 
             // 获取具体坐标                               这里有一个空格
             String[] movePositions = rawMessage.replace("move ", "").split(" ");

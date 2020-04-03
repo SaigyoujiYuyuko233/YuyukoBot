@@ -1,5 +1,6 @@
 package network.meikai.mc.uuzselfplaybot.network.Events;
 
+import com.github.steveice10.mc.protocol.packet.ingame.client.ClientChatPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.ServerChatPacket;
 import com.github.steveice10.packetlib.event.session.PacketReceivedEvent;
 import network.meikai.mc.uuzselfplaybot.GlobalVars;
@@ -32,8 +33,26 @@ public class ServerChatPacketHandler {
         // 获取 去除玩家名的消息
         String rawMessage = message.replaceAll("^(<)[A-Za-z0-9\\-_.]+(>\\s)", "");
 
-        if (Pattern.matches("^(move)(\\s)[\\-0-9]+(\\s)[\\-0-9]+(\\s)[\\-0-9]+", rawMessage)) {
+        /*
+         * 发送指令
+         */
+        if (Pattern.matches("^(" + GlobalVars.BOTNAME + ")(\\s)(exec)(\\s)[A-Za-z0-9\\-/_.\\s]+", rawMessage) ||
+            Pattern.matches("^(\\[)[A-Za-z0-9\\-_.]+(\\s\\->\\sme\\]\\sexec\\s)[A-Za-z0-9\\-/_.\\s\\u4E00-\\u9FA5]+", rawMessage)) {
 
+            // 获取指令
+            String command = rawMessage.replaceAll("^(\\[)[A-Za-z0-9\\-_.]+(\\s\\->\\sme\\]\\sexec\\s)", "");
+
+            // 执行
+            evt.getSession().send(new ClientChatPacket(command));
+
+            // log
+            EventHandler.EVENT_LOGGER.info("Bot Command Execute: " + command + " by " + sender);
+        }
+
+        /*
+         * 移动指令
+         */
+        if (Pattern.matches("^(move)(\\s)[\\-0-9]+(\\s)[\\-0-9]+(\\s)[\\-0-9]+", rawMessage)) {
 
             // 获取具体坐标                               这里有一个空格
             String[] movePositions = rawMessage.replace("move ", "").split(" ");

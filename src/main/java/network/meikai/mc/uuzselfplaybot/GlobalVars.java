@@ -5,8 +5,6 @@ import com.github.steveice10.packetlib.Client;
 import com.github.steveice10.packetlib.tcp.TcpSessionFactory;
 import network.meikai.mc.uuzselfplaybot.behavior.BotMoving;
 import network.meikai.mc.uuzselfplaybot.network.EventHandler;
-import network.meikai.mc.uuzselfplaybot.network.Events.ServerJoinGamePacketHandler;
-import network.meikai.mc.uuzselfplaybot.network.Events.ServerPlayerPositionRotationPacketHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

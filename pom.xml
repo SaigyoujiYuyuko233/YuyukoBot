@@ -32,7 +32,7 @@
                 <version>3.2.0</version>
                 <configuration>
                     <!--suppress UnresolvedMavenProperty -->
-                    <finalName>YuyukoBot-${project.version}-Build-${CI_PIPELINE_ID}-Full</finalName>
+                    <finalName>YuyukoBot-${project.version}-Build-${CI_PIPELINE_ID}</finalName>
 
                     <archive>
                         <manifest>
@@ -50,7 +50,7 @@
                         </manifestEntries>
                     </archive>
                     <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                        <descriptorRef>full</descriptorRef>
                     </descriptorRefs>
                 </configuration>
 

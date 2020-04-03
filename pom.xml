@@ -31,6 +31,9 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
+                    <!--suppress UnresolvedMavenProperty -->
+                    <finalName>YuyukoBot-${project.version}-Build-${CI_PIPELINE_ID}-Full</finalName>
+
                     <archive>
                         <manifest>
                             <mainClass>network.meikai.mc.uuzselfplaybot.YuyukoSelfPlayBot</mainClass>

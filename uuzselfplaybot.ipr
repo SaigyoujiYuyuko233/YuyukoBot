@@ -292,14 +292,5 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/jline/jline/3.14.0/jline-3.14.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="spigot-1.15.2">
-      <CLASSES>
-        <root url="jar://E:/Minecraft/Servers/后门插件测试/spigot-1.15.2.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://E:/Minecraft/Servers/后门插件测试/spigot-1.15.2.jar!/" />
-      </SOURCES>
-    </library>
   </component>
 </project>

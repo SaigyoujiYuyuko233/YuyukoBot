@@ -18,11 +18,14 @@ public class ServerChatPacketHandler {
 
         logger.info(message);
 
+        // 去掉颜色字符
+        message = message.replaceAll("^(§)[0-9]", "");
+
         /*
          * 判断是否是私聊
          */
         boolean isPublic;
-        String isTellPattern = "^(\\[)[A-Za-z0-9\\-_.]+(\\s\\->\\s)[A-Za-z0-9\\-/_.\\s一-龥](\\]\\s)[A-Za-z0-9\\-/_.\\s一-龥]+";
+        String isTellPattern = "^(\\[)[\\S\\s]+(\\s->\\s)[\\S]+(\\]\\s)[\\S\\s]+";
 
         if ( Pattern.matches(isTellPattern, message) ) {
             isPublic = false;
@@ -34,7 +37,7 @@ public class ServerChatPacketHandler {
          * 判断 message sender
          */
         String sender;
-        String humanSenderPattern = "^(<)[A-Za-z0-9\\-_.]+(>\\s)[A-Za-z0-9\\-_.\\s!?]+";
+        String humanSenderPattern = "^(<)[\\S]+(>\\s)[\\S\\s]+";
 
         if ( Pattern.matches(humanSenderPattern, message) ) {
             sender = message.split(" ")[0];
@@ -47,23 +50,21 @@ public class ServerChatPacketHandler {
             sender = "Server";
         }
 
-        // 获取 去除玩家名的消息
+        /*
+         * 获取 去除玩家名的消息
+         */
         String rawMessage;
         if ( isPublic ) {
-            rawMessage = message.replaceAll("^(<)[A-Za-z0-9\\-_.]+(>\\s)", "");
+            rawMessage = message.replaceAll("^(<)[\\S]+(>\\s)", "");
         } else {
-            rawMessage = message.replaceAll("^(\\[)[A-Za-z0-9\\-_.]+(\\s\\->\\s)[A-Za-z0-9\\-/_.\\s一-龥](\\]\\s)", "");
+            rawMessage = message.replaceAll("^(\\[)[\\S\\s]+(\\s->\\s)[\\S]+(\\]\\s)", "");
         }
 
-        // 调试
-        logger.debug("isPublic: " + isPublic);
-        logger.debug("Sender: " + sender);
-        logger.debug("RawMessage: " + rawMessage);
 
         /*
          * 发送指令
          */
-        if ( Pattern.matches("^(exec\\s)[A-Za-z0-9]+(\\s)[A-Za-z0-9\\-/_.\\s\\u4E00-\\u9FA5]+", rawMessage) && !isPublic) {
+        if ( Pattern.matches("^(exec\\s)[A-Za-z0-9]+(\\s)[\\s\\S]+", rawMessage) && !isPublic) {
 
             // 获取指令
             String command = rawMessage.replaceAll("^(exec\\s)", "");
@@ -79,29 +80,33 @@ public class ServerChatPacketHandler {
         /*
          * 移动指令
          */
-        if (Pattern.matches("^(move)(\\s)[\\-0-9]+(\\s)[\\-0-9]+(\\s)[\\-0-9]+", rawMessage) && !isPublic) {
+//        if (Pattern.matches("^(move)(\\s)[\\-0-9]+(\\s)[\\-0-9]+(\\s)[\\-0-9]+", rawMessage) && !isPublic) {
+//
+//            // 获取具体坐标                               这里有一个空格
+//            String[] movePositions = rawMessage.replace("move ", "").split(" ");
+//            Double fX = Double.valueOf(movePositions[0]); // 从 2 开始 | 忽略 move
+//            Double fY = Double.valueOf(movePositions[1]);
+//            Double fZ = Double.valueOf(movePositions[2]);
+//
+//            GlobalVars.BotMoving.moveToPosition(
+//                fX,
+//                fY,
+//                fZ
+//            );
+//
+//            // log
+//            EventHandler.EVENT_LOGGER.info("Move to (" +
+//                fX + "," +
+//                fY + "," +
+//                fZ + ")" +
+//                " By " + sender
+//            );
+//        }
 
-            // 获取具体坐标                               这里有一个空格
-            String[] movePositions = rawMessage.replace("move ", "").split(" ");
-            Double fX = Double.valueOf(movePositions[0]); // 从 2 开始 | 忽略 move
-            Double fY = Double.valueOf(movePositions[1]);
-            Double fZ = Double.valueOf(movePositions[2]);
-
-            GlobalVars.BotMoving.moveToPosition(
-                fX,
-                fY,
-                fZ
-            );
-
-            // log
-            EventHandler.EVENT_LOGGER.info("Move to (" +
-                fX + "," +
-                fY + "," +
-                fZ + ")" +
-                " By " + sender
-            );
-        }
-
+        // 调试
+        logger.debug("isPublic: " + isPublic);
+        logger.debug("Sender: " + sender);
+        logger.debug("RawMessage: " + rawMessage);
     }
 
 }

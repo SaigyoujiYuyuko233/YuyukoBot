@@ -17,6 +17,8 @@ import org.jline.reader.LineReader;
 import org.jline.reader.LineReaderBuilder;
 import org.jline.terminal.Terminal;
 
+import java.util.UUID;
+
 public class CommandHandler implements Runnable{
 
     public static Terminal terminal;
@@ -76,35 +78,15 @@ public class CommandHandler implements Runnable{
                 if ( botCommand.matches("^(list)") ) {
                     GlobalVars.MAIN_LOGGER.debug("Executor: list");
 
-                    MinecraftProtocol protocol = new MinecraftProtocol(SubProtocol.STATUS);
-                    final Client client = new Client(GlobalVars.HOST, GlobalVars.PORT, protocol, new TcpSessionFactory());
-
-                    client.getSession().setFlag(MinecraftConstants.SERVER_INFO_HANDLER_KEY, new ServerInfoHandler() {
-                        @Override
-                        public void handle(Session session, ServerStatusInfo info) {
-                            String onlinePlayers = "";
-                            for ( int i = 0; i < info.getPlayerInfo().getPlayers().length; i++ ) {
-                                if ( i == 0 ) {
-                                    onlinePlayers = "<" + info.getPlayerInfo().getPlayers()[i].getName() + ">";
-                                } else {
-                                    onlinePlayers = onlinePlayers + " <" + info.getPlayerInfo().getPlayers()[i].getName() + ">";
-                                }
-                            }
-
-                            GlobalVars.MAIN_LOGGER.info("在线人数: " + info.getPlayerInfo().getOnlinePlayers() + " / " + info.getPlayerInfo().getMaxPlayers());
-                            GlobalVars.MAIN_LOGGER.info("在线的小可爱: " + onlinePlayers);
-                        }
-                    });
-
-                    client.getSession().setFlag(MinecraftConstants.SERVER_PING_TIME_HANDLER_KEY, new ServerPingTimeHandler() {
-                        @Override
-                        public void handle(Session session, long pingTime) {
-                            GlobalVars.MAIN_LOGGER.info("服务器延迟: " + pingTime + "ms");
-                            client.getSession().disconnect("qaq");
-                        }
-                    });
-
-                    client.getSession().connect();
+                    String onlinePlayers = "";
+                    for ( UUID key : GlobalVars.onlinePlayers.keySet() ) {
+                        String playerName = GlobalVars.onlinePlayers.get(key).getPlayername();
+                        int playerLatancy = GlobalVars.onlinePlayers.get(key).getPing();
+                        onlinePlayers = " <" + playerName + "|" + playerLatancy + "ms>";
+                    }
+                    onlinePlayers = onlinePlayers.trim();
+                    GlobalVars.MAIN_LOGGER.info("在线人数: " + GlobalVars.onlinePlayers.size());
+                    GlobalVars.MAIN_LOGGER.info("在线的小可爱: " + onlinePlayers);
 
                     continue;
                 }

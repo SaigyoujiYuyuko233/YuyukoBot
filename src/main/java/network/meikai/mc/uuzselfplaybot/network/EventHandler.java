@@ -1,9 +1,6 @@
 package network.meikai.mc.uuzselfplaybot.network;
 
-import com.github.steveice10.mc.protocol.packet.ingame.server.ServerChatPacket;
-import com.github.steveice10.mc.protocol.packet.ingame.server.ServerDisconnectPacket;
-import com.github.steveice10.mc.protocol.packet.ingame.server.ServerJoinGamePacket;
-import com.github.steveice10.mc.protocol.packet.ingame.server.ServerKeepAlivePacket;
+import com.github.steveice10.mc.protocol.packet.ingame.server.*;
 import com.github.steveice10.mc.protocol.packet.ingame.server.entity.player.ServerPlayerHealthPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.entity.player.ServerPlayerPositionRotationPacket;
 import com.github.steveice10.packetlib.event.session.PacketReceivedEvent;
@@ -46,9 +43,8 @@ public class EventHandler extends SessionAdapter {
 
         // ServerKeepAlivePacket - Handle
         if ( evt.getPacket() instanceof ServerKeepAlivePacket) {
-            EVENT_LOGGER.debug("KeepAlive" + evt.getPacket());
+//            EVENT_LOGGER.debug("KeepAlive" + evt.getPacket());
         }
-
 
         // ServerRespawnPacket - Handle
         if ( evt.getPacket() instanceof ServerPlayerHealthPacket) {

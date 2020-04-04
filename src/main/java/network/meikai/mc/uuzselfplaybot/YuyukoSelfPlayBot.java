@@ -3,7 +3,6 @@ package network.meikai.mc.uuzselfplaybot;
 import com.github.steveice10.mc.protocol.MinecraftProtocol;
 import com.github.steveice10.packetlib.Client;
 import com.github.steveice10.packetlib.tcp.TcpSessionFactory;
-import network.meikai.mc.uuzselfplaybot.behavior.Chatting;
 import network.meikai.mc.uuzselfplaybot.command.CommandHandler;
 import network.meikai.mc.uuzselfplaybot.network.KeepAlivePacket;
 import org.fusesource.jansi.Ansi;

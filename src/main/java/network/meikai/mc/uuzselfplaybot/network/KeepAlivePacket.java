@@ -8,7 +8,7 @@ public class KeepAlivePacket implements Runnable{
     @Override
     public void run() {
         while (true) {
-            GlobalVars.MAIN_LOGGER.debug("isConnected: " + GlobalVars.CLIENT.getSession().isConnected() );
+//            GlobalVars.MAIN_LOGGER.debug("isConnected: " + GlobalVars.CLIENT.getSession().isConnected() );
 
             if ( !GlobalVars.CLIENT.getSession().isConnected() ) {
                 GlobalVars.MAIN_LOGGER.error("Connect timeout!");

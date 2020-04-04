@@ -5,8 +5,12 @@ import com.github.steveice10.packetlib.Client;
 import com.github.steveice10.packetlib.tcp.TcpSessionFactory;
 import network.meikai.mc.uuzselfplaybot.behavior.BotMoving;
 import network.meikai.mc.uuzselfplaybot.network.EventHandler;
+import network.meikai.mc.uuzselfplaybot.units.PlayerInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
+import java.util.UUID;
 
 public class GlobalVars {
 
@@ -43,5 +47,8 @@ public class GlobalVars {
     public static Double BotZ = 0D;
     public static Float BotYaw = 0F;
     public static Float BotPitch = 0F;
+
+    // Server INFOs
+    public static HashMap<UUID, PlayerInfo> onlinePlayers = new HashMap<>();
 
 }

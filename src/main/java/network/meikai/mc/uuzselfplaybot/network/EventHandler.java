@@ -12,6 +12,7 @@ import org.apache.logging.log4j.Logger;
 public class EventHandler extends SessionAdapter {
     public static final ServerJoinGamePacketHandler serverJoinGamePacketHandler = new ServerJoinGamePacketHandler();
     public static final ServerChatPacketHandler serverChatPacketHandler = new ServerChatPacketHandler();
+    public static final ServerPlayerListEntryPacketHandler serverPlayerListEntryPacketHandler = new ServerPlayerListEntryPacketHandler();
     public static final PlayerRespawnEventHandler serverRespawnPacketHandler = new PlayerRespawnEventHandler();
     public static final ServerDisconnectPacketHandler serverDisconnectPacketHandler = new ServerDisconnectPacketHandler();
     public static final ServerPlayerPositionRotationPacketHandler serverPlayerPositionRotationPacketHandler = new ServerPlayerPositionRotationPacketHandler();
@@ -39,6 +40,12 @@ public class EventHandler extends SessionAdapter {
         // ServerDisconnectPacketHandler - Handle
         if ( evt.getPacket() instanceof ServerDisconnectPacket) {
             serverDisconnectPacketHandler.handle(evt, (ServerDisconnectPacket) evt.getPacket());
+        }
+
+        // ServerPlayerListEntryPacketHandler - Handle
+        if ( evt.getPacket() instanceof ServerPlayerListEntryPacket) {
+            serverPlayerListEntryPacketHandler.handle(evt, (ServerPlayerListEntryPacket) evt.getPacket());
+//            EVENT_LOGGER.info(evt.getPacket());
         }
 
         // ServerKeepAlivePacket - Handle

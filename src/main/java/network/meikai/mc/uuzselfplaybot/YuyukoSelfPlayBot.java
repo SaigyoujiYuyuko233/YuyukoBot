@@ -4,6 +4,8 @@ import com.github.steveice10.mc.protocol.MinecraftProtocol;
 import com.github.steveice10.packetlib.Client;
 import com.github.steveice10.packetlib.tcp.TcpSessionFactory;
 import network.meikai.mc.uuzselfplaybot.behavior.Chatting;
+import network.meikai.mc.uuzselfplaybot.command.CommandHandler;
+import network.meikai.mc.uuzselfplaybot.network.KeepAlivePacket;
 import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.AnsiConsole;
 import picocli.CommandLine;
@@ -59,18 +61,32 @@ public class YuyukoSelfPlayBot {
         GlobalVars.TCP_SESSION_FACTORY = new TcpSessionFactory();
         GlobalVars.CLIENT = new Client(GlobalVars.HOST, GlobalVars.PORT, GlobalVars.PROTOCOL, GlobalVars.TCP_SESSION_FACTORY);
 
-
-        GlobalVars.MAIN_LOGGER.info("Preparing Network Handler");
-        GlobalVars.CLIENT.getSession().addListener(GlobalVars.eventHandler);
-
         GlobalVars.MAIN_LOGGER.info("Try to connect to server...");
         GlobalVars.CLIENT.getSession().connect();
 
-        GlobalVars.MAIN_LOGGER.info("Loading Chatting module");
-        Thread chatting = new Thread(new Chatting());
-        chatting.setDaemon(true);
-        chatting.setName("Chatting");
-        chatting.start();
+        GlobalVars.CLIENT.getSession().setConnectTimeout(10);
+        GlobalVars.CLIENT.getSession().setReadTimeout(2);
+        GlobalVars.CLIENT.getSession().setWriteTimeout(2);
+
+        // Network handler
+        GlobalVars.CLIENT.getSession().addListener(GlobalVars.eventHandler);
+
+        // KeepAlive
+        Thread keepAlive = new Thread(new KeepAlivePacket());
+        keepAlive.setDaemon(true);
+        keepAlive.setName("KeepAlive");
+        keepAlive.start();
+
+        if ( !GlobalVars.CLIENT.getSession().isConnected() ) {
+            GlobalVars.MAIN_LOGGER.error("Connect timeout!");
+            System.exit(-2);
+        }
+
+        // input handler
+        Thread commandHandler = new Thread(new CommandHandler());
+        commandHandler.setDaemon(false);
+        commandHandler.setName("CommandHandler");
+        commandHandler.start();
 
     }
 

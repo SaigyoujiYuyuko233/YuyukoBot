@@ -5,8 +5,8 @@ import com.github.steveice10.packetlib.Client;
 import com.github.steveice10.packetlib.tcp.TcpSessionFactory;
 import network.meikai.mc.uuzselfplaybot.behavior.BotMoving;
 import network.meikai.mc.uuzselfplaybot.network.EventHandler;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class GlobalVars {
 
@@ -23,14 +23,14 @@ public class GlobalVars {
     public static String Token;
 
     // Classes
-    public static final Logger MAIN_LOGGER = LogManager.getLogger("YuyukoBot");
+    public static final Logger MAIN_LOGGER = LoggerFactory.getLogger("YuyukoBot");
 
     // bot
     public static MinecraftProtocol PROTOCOL;
     public static TcpSessionFactory TCP_SESSION_FACTORY;
     public static Client CLIENT;
 
-    // Network Handle
+    // Handlers
     public static final EventHandler eventHandler = new EventHandler();
 
     // Bot behavior

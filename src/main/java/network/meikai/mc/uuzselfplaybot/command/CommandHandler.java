@@ -82,7 +82,7 @@ public class CommandHandler implements Runnable{
                     for ( UUID key : GlobalVars.onlinePlayers.keySet() ) {
                         String playerName = GlobalVars.onlinePlayers.get(key).getPlayername();
                         int playerLatancy = GlobalVars.onlinePlayers.get(key).getPing();
-                        onlinePlayers = " <" + playerName + "|" + playerLatancy + "ms>";
+                        onlinePlayers += " <" + playerName + "|" + playerLatancy + "ms>";
                     }
                     onlinePlayers = onlinePlayers.trim();
                     GlobalVars.MAIN_LOGGER.info("在线人数: " + GlobalVars.onlinePlayers.size());

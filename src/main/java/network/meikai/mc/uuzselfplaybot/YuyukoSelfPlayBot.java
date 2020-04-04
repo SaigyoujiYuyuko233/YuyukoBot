@@ -63,9 +63,9 @@ public class YuyukoSelfPlayBot {
         GlobalVars.MAIN_LOGGER.info("Try to connect to server...");
         GlobalVars.CLIENT.getSession().connect();
 
-        GlobalVars.CLIENT.getSession().setConnectTimeout(10);
-        GlobalVars.CLIENT.getSession().setReadTimeout(2);
-        GlobalVars.CLIENT.getSession().setWriteTimeout(2);
+        GlobalVars.CLIENT.getSession().setConnectTimeout(20);
+        GlobalVars.CLIENT.getSession().setReadTimeout(4);
+        GlobalVars.CLIENT.getSession().setWriteTimeout(4);
 
         // Network handler
         GlobalVars.CLIENT.getSession().addListener(GlobalVars.eventHandler);
@@ -86,6 +86,7 @@ public class YuyukoSelfPlayBot {
         commandHandler.setDaemon(false);
         commandHandler.setName("CommandHandler");
         commandHandler.start();
+
 
     }
 

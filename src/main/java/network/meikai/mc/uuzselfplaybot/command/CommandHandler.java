@@ -10,13 +10,12 @@ import com.github.steveice10.mc.protocol.packet.ingame.client.ClientChatPacket;
 import com.github.steveice10.packetlib.Client;
 import com.github.steveice10.packetlib.Session;
 import com.github.steveice10.packetlib.tcp.TcpSessionFactory;
+import net.minecrell.terminalconsole.TerminalConsoleAppender;
 import network.meikai.mc.uuzselfplaybot.GlobalVars;
+import org.jline.reader.EndOfFileException;
 import org.jline.reader.LineReader;
 import org.jline.reader.LineReaderBuilder;
 import org.jline.terminal.Terminal;
-import org.jline.terminal.TerminalBuilder;
-
-import java.io.IOException;
 
 public class CommandHandler implements Runnable{
 
@@ -25,40 +24,26 @@ public class CommandHandler implements Runnable{
 
     @Override
     public void run() {
-        System.setProperty("jline.internal.Log.debug", "true");
 
-        // init terminal
-        try {
-           terminal = TerminalBuilder
-                   .builder()
-                   .dumb(true)
-                   .system(true)
-                   .name("command")
-                   .jansi(true)
-                   .build();
+        terminal = TerminalConsoleAppender.getTerminal();
 
-           lineReader = LineReaderBuilder.builder().terminal(terminal).option(LineReader.Option.AUTO_FRESH_LINE, true).build();
+        if (terminal != null) {
+            lineReader = LineReaderBuilder.builder().terminal(terminal).build();
+        } else {
+            lineReader = LineReaderBuilder.builder().terminal((Terminal) System.in).build();
+        }
 
-           new Thread(new Runnable() {
-               @Override
-               public void run() {
-                   while (true) {
-                       if (lineReader.isReading()) {
-                           lineReader.callWidget(LineReader.REDISPLAY);
-                       }
-                       try {
-                           Thread.sleep(200);
-                       } catch (InterruptedException e) {
-                           e.printStackTrace();
-                       }
-                   }
-               }
-           }).start();
-        } catch (IOException e) { GlobalVars.MAIN_LOGGER.error(e.getMessage()); e.printStackTrace(); }
+        lineReader.setOpt(LineReader.Option.DISABLE_EVENT_EXPANSION);
+        lineReader.unsetOpt(LineReader.Option.INSERT_TAB);
+        TerminalConsoleAppender.setReader(lineReader);
 
         while (true) {
-            String command = lineReader.readLine("聊天/命令/Bot命令 >> ");
-            GlobalVars.MAIN_LOGGER.debug("Input: " + command);
+            String command;
+            try {
+                command = lineReader.readLine("聊天/命令/Bot命令 >> ");
+            } catch (EndOfFileException var9) {
+                continue;
+            }
 
             // 如果为空 跳过此次循环
             if ( command.equals("") ) {
@@ -81,7 +66,7 @@ public class CommandHandler implements Runnable{
                  */
 
                 // 退出
-                if ( botCommand.matches("^(quit)[\\s\\S]+") ) {
+                if ( botCommand.matches("^(quit)") ) {
                     GlobalVars.MAIN_LOGGER.info("Bye~");
                     GlobalVars.CLIENT.getSession().disconnect("qaq");
                     System.exit(0);
@@ -97,8 +82,6 @@ public class CommandHandler implements Runnable{
                     client.getSession().setFlag(MinecraftConstants.SERVER_INFO_HANDLER_KEY, new ServerInfoHandler() {
                         @Override
                         public void handle(Session session, ServerStatusInfo info) {
-                            System.out.print("\n");
-
                             String onlinePlayers = "";
                             for ( int i = 0; i < info.getPlayerInfo().getPlayers().length; i++ ) {
                                 if ( i == 0 ) {
@@ -117,8 +100,6 @@ public class CommandHandler implements Runnable{
                         @Override
                         public void handle(Session session, long pingTime) {
                             GlobalVars.MAIN_LOGGER.info("服务器延迟: " + pingTime + "ms");
-                            System.out.print("\n");
-
                             client.getSession().disconnect("qaq");
                         }
                     });

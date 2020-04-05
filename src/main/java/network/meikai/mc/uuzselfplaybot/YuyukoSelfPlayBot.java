@@ -70,16 +70,16 @@ public class YuyukoSelfPlayBot {
         // Network handler
         GlobalVars.CLIENT.getSession().addListener(GlobalVars.eventHandler);
 
+        if ( !GlobalVars.CLIENT.getSession().isConnected() ) {
+            GlobalVars.MAIN_LOGGER.error("Connect timeout!");
+            System.exit(-2);
+        }
+
         // KeepAlive
         Thread keepAlive = new Thread(new KeepAlivePacket());
         keepAlive.setDaemon(true);
         keepAlive.setName("KeepAlive");
         keepAlive.start();
-
-        if ( !GlobalVars.CLIENT.getSession().isConnected() ) {
-            GlobalVars.MAIN_LOGGER.error("Connect timeout!");
-            System.exit(-2);
-        }
 
         // input handler
         Thread commandHandler = new Thread(new CommandHandler());

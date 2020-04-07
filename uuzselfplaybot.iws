@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99407164-ece8-49bd-93c3-1a02864eb1f0" name="默认更改列表" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/CliConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/command/CliConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/GlobalVars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/GlobalVars.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/YuyukoSelfPlayBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/YuyukoSelfPlayBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/command/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/command/CommandHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uuzselfplaybot.iws" beforeDir="false" afterPath="$PROJECT_DIR$/uuzselfplaybot.iws" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/GlobalVars.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="51" column="72" selection-start-line="51" selection-start-column="72" selection-end-line="51" selection-end-column="72" />
+            <state relative-caret-position="215">
+              <caret line="25" column="30" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,19 +43,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/command/CommandHandler.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-160">
-              <caret line="2" column="52" lean-forward="true" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+            <state relative-caret-position="448">
+              <caret line="28" column="17" selection-start-line="28" selection-end-line="28" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config.ini">
+        <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/config/ConfigHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+            <state relative-caret-position="64">
+              <caret line="4" column="58" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -62,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/YuyukoSelfPlayBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+            <state relative-caret-position="-217">
+              <caret line="51" column="40" lean-forward="true" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,10 +73,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/config/ConfigHandler.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/command/CliConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="71" lean-forward="true" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
+            <state relative-caret-position="544">
+              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/KeepAlivePacket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            <state relative-caret-position="256">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -151,15 +152,16 @@
         <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
         <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/command/YuyukoTerminal.java" />
         <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/units/PlayerInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/GlobalVars.java" />
         <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/EventHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/Events/ServerPlayerListEntryPacketHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/KeepAlivePacket.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/command/CommandHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/YuyukoSelfPlayBot.java" />
-        <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/config/ConfigHandler.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config.ini" />
+        <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/GlobalVars.java" />
+        <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/YuyukoSelfPlayBot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/command/CliConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/config/ConfigHandler.java" />
       </list>
     </option>
   </component>
@@ -363,7 +365,6 @@
     <configuration name="YuyukoSelfPlayBot" type="Application" factoryName="Application" activateToolWindowBeforeRun="false">
       <option name="MAIN_CLASS_NAME" value="network.meikai.mc.uuzselfplaybot.YuyukoSelfPlayBot" />
       <module name="uuz-selfplay-bot" />
-      <option name="PROGRAM_PARAMETERS" value="-h 127.0.0.1 -n DreamyYuyuko -p 25565 -t uuz" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -413,12 +414,12 @@
       <workItem from="1585752695533" duration="16111000" />
       <workItem from="1585809436129" duration="68293000" />
       <workItem from="1585989674225" duration="23603000" />
-      <workItem from="1586179311086" duration="4939000" />
+      <workItem from="1586179311086" duration="9172000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148975000" />
+    <option name="totallyTimeSpent" value="153208000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -433,7 +434,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49614793" visible="true" weight="0.20628998" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49614793" visible="true" weight="0.20628998" />
       <window_info id="Structure" order="1" sideWeight="0.5046296" side_tool="true" weight="0.20415778" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -443,7 +444,7 @@
       <window_info id="设计器" order="7" />
       <window_info anchor="bottom" id="Tail" order="0" />
       <window_info anchor="bottom" id="Messages" order="1" weight="0.3286334" />
-      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.4989339" visible="true" weight="0.3286334" />
+      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.4989339" weight="0.3286334" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5010661" side_tool="true" weight="0.329718" />
       <window_info anchor="bottom" id="Database Changes" order="5" />
@@ -454,7 +455,7 @@
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="13" sideWeight="0.4989339" weight="0.29609543" />
+      <window_info active="true" anchor="bottom" id="Run" order="13" sideWeight="0.4989339" visible="true" weight="0.29609543" />
       <window_info anchor="bottom" id="TODO" order="14" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -471,9 +472,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/meikai/mc/network/Events/ServerJoinGamePacketHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/meikai/mc/network/EventHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/meikai/mc/network/Events/ServerPlayerPositionRotationPacketHandler.java" />
     <entry file="jar://E:/Program Files/Java/jdk1.8.0_212/src.zip!/java/lang/Runnable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -638,16 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/CliConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/gui/GUI.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/gui/GUI.form" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/jline/jline-reader/3.14.0/jline-reader-3.14.0.jar!/org/jline/reader/impl/LineReaderImpl.class">
@@ -721,23 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/GlobalVars.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="51" column="72" selection-start-line="51" selection-start-column="72" selection-end-line="51" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/KeepAlivePacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/Events/ServerPlayerListEntryPacketHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -769,16 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/EventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/Events/ServerJoinGamePacketHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -791,15 +752,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/command/CommandHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-160">
+        <state relative-caret-position="-976">
           <caret line="2" column="52" lean-forward="true" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/KeepAlivePacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/ini4j/ini4j/0.5.4/ini4j-0.5.4.jar!/org/ini4j/BasicProfile.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Program Files/Java/jdk1.8.0_212/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="126" column="77" lean-forward="true" selection-start-line="126" selection-start-column="77" selection-end-line="126" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/EventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-api/2.9.1/log4j-api-2.9.1.jar!/org/apache/logging/log4j/Level.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="17" selection-start-line="28" selection-end-line="28" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/GlobalVars.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/command/CliConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/YuyukoSelfPlayBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+        <state relative-caret-position="-217">
+          <caret line="51" column="40" lean-forward="true" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -808,18 +834,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/config/ConfigHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="71" lean-forward="true" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        <state relative-caret-position="64">
+          <caret line="4" column="58" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
         </state>
       </provider>
     </entry>

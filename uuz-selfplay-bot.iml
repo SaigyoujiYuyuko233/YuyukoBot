@@ -28,5 +28,6 @@
     <orderEntry type="library" name="Maven: net.minecrell:terminalconsoleappender:1.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.github.edwgiz:maven-shade-plugin.log4j2-cachefile-transformer:2.13.0" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.5" level="project" />
+    <orderEntry type="library" name="Maven: org.ini4j:ini4j:0.5.4" level="project" />
   </component>
 </module>

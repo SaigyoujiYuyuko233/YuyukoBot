@@ -1,15 +1,6 @@
 package network.meikai.mc.uuzselfplaybot.command;
 
-import com.github.steveice10.mc.protocol.MinecraftConstants;
-import com.github.steveice10.mc.protocol.MinecraftProtocol;
-import com.github.steveice10.mc.protocol.data.SubProtocol;
-import com.github.steveice10.mc.protocol.data.status.ServerStatusInfo;
-import com.github.steveice10.mc.protocol.data.status.handler.ServerInfoHandler;
-import com.github.steveice10.mc.protocol.data.status.handler.ServerPingTimeHandler;
 import com.github.steveice10.mc.protocol.packet.ingame.client.ClientChatPacket;
-import com.github.steveice10.packetlib.Client;
-import com.github.steveice10.packetlib.Session;
-import com.github.steveice10.packetlib.tcp.TcpSessionFactory;
 import net.minecrell.terminalconsole.TerminalConsoleAppender;
 import network.meikai.mc.uuzselfplaybot.GlobalVars;
 import org.jline.reader.EndOfFileException;

@@ -79,47 +79,6 @@
                 </dependencies>
             </plugin>
 
-<!--            <plugin>-->
-<!--                &lt;!&ndash; 依赖自动打包 &ndash;&gt;-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-assembly-plugin</artifactId>-->
-<!--                <version>3.2.0</version>-->
-<!--                <configuration>-->
-<!--                    &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;-->
-<!--                    <finalName>YuyukoBot-${project.version}-Build-${CI_PIPELINE_ID}</finalName>-->
-
-<!--                    <archive>-->
-<!--                        <manifest>-->
-<!--                            <mainClass>network.meikai.mc.uuzselfplaybot.YuyukoSelfPlayBot</mainClass>-->
-<!--                        </manifest>-->
-
-<!--                        <manifestEntries>-->
-<!--                            <implementation-version>${project.version}</implementation-version>-->
-<!--                            &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;-->
-<!--                            <implementation-build>${CI_PIPELINE_ID}</implementation-build>-->
-<!--                            &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;-->
-<!--                            <implementation-git-branch>${CI_COMMIT_REF_NAME}</implementation-git-branch>-->
-<!--                            &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;-->
-<!--                            <implementation-git-sha>${CI_COMMIT_SHORT_SHA}</implementation-git-sha>-->
-<!--                        </manifestEntries>-->
-<!--                    </archive>-->
-<!--                    <descriptorRefs>-->
-<!--                        <descriptorRef>jar-with-dependencies</descriptorRef>-->
-<!--                    </descriptorRefs>-->
-<!--                </configuration>-->
-
-<!--                &lt;!&ndash; 使用 mvn package &ndash;&gt;-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>make-assembly</id>-->
-<!--                        <phase>package</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>single</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
-
         </plugins>
     </build>
 
@@ -201,6 +160,13 @@
             <groupId>com.github.edwgiz</groupId>
             <artifactId>maven-shade-plugin.log4j2-cachefile-transformer</artifactId>
             <version>2.13.0</version>
+        </dependency>
+
+        <!-- ini -->
+        <dependency>
+            <groupId>org.ini4j</groupId>
+            <artifactId>ini4j</artifactId>
+            <version>0.5.4</version>
         </dependency>
     </dependencies>
 </project>

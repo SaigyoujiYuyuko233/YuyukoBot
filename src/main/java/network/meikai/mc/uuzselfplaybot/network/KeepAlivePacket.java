@@ -1,6 +1,7 @@
 package network.meikai.mc.uuzselfplaybot.network;
 
 import network.meikai.mc.uuzselfplaybot.GlobalVars;
+import org.apache.logging.log4j.LogManager;
 
 public class KeepAlivePacket implements Runnable{
 
@@ -16,9 +17,10 @@ public class KeepAlivePacket implements Runnable{
             }
 
             try {
-                Thread.sleep(5000);
+                Thread.sleep(GlobalVars.keepaliveTimeout);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                LogManager.getLogger("Keepalive").error(e.getMessage());
+                LogManager.getLogger("Keepalive").error(e.getStackTrace());
             }
         }
     }

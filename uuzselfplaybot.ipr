@@ -179,6 +179,9 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="jdk1.8.0_212" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
   <component name="libraryTable">
     <library name="Maven: com.github.edwgiz:maven-shade-plugin.log4j2-cachefile-transformer:2.13.0">
       <CLASSES>
@@ -321,6 +324,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi/1.18/jansi-1.18-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.ini4j:ini4j:0.5.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ini4j/ini4j/0.5.4/ini4j-0.5.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ini4j/ini4j/0.5.4/ini4j-0.5.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ini4j/ini4j/0.5.4/ini4j-0.5.4-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.jline:jline-reader:3.14.0">

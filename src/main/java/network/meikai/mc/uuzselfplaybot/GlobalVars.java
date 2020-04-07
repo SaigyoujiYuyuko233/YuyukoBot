@@ -20,11 +20,29 @@ public class GlobalVars {
     public static String GIT_REVERSION = "";
     public static String BUILD = "";
 
-    // config
+    /*
+     * Configuration
+     */
+    public static String[] arg;
+
+    // connection
     public static String HOST;
     public static int PORT;
+    public static int connectTimeout;
+    public static int readTimeout;
+    public static int writeTimeout;
+    public static int keepaliveTimeout;
+
+    // bot
     public static String BOTNAME;
     public static String Token;
+    public static String logLevel;
+
+    // online mode
+    public static Boolean isOnline;
+    public static String onlineUsername;
+    public static String onlinePassword;
+
 
     // Classes
     public static final Logger MAIN_LOGGER = LoggerFactory.getLogger("YuyukoBot");

@@ -1,5 +1,6 @@
 package network.meikai.mc.uuzselfplaybot;
 
+import com.github.steveice10.mc.auth.exception.request.RequestException;
 import com.github.steveice10.mc.protocol.MinecraftProtocol;
 import com.github.steveice10.packetlib.Client;
 import com.github.steveice10.packetlib.tcp.TcpSessionFactory;
@@ -60,7 +61,21 @@ public class YuyukoSelfPlayBot {
         GlobalVars.MAIN_LOGGER.info("Dst Server - " + GlobalVars.HOST + ":" + GlobalVars.PORT);
 
         GlobalVars.MAIN_LOGGER.info("Initiate the bot...");
-        GlobalVars.PROTOCOL = new MinecraftProtocol(GlobalVars.BOTNAME);
+
+        // if online mode is enable
+        if ( GlobalVars.isOnline ) {
+            try {
+                GlobalVars.MAIN_LOGGER.info("Online mode enable! Try to login...");
+                GlobalVars.PROTOCOL = new MinecraftProtocol(GlobalVars.onlineUsername, GlobalVars.onlinePassword);
+            } catch (RequestException e) {
+                GlobalVars.MAIN_LOGGER.error(e.getMessage());
+                e.printStackTrace();
+                System.exit(-4);
+            }
+        } else {
+            GlobalVars.PROTOCOL = new MinecraftProtocol(GlobalVars.BOTNAME);
+        }
+
         GlobalVars.TCP_SESSION_FACTORY = new TcpSessionFactory();
         GlobalVars.CLIENT = new Client(GlobalVars.HOST, GlobalVars.PORT, GlobalVars.PROTOCOL, GlobalVars.TCP_SESSION_FACTORY);
 

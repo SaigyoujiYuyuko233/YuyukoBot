@@ -4,7 +4,11 @@ import com.github.steveice10.mc.protocol.MinecraftProtocol;
 import com.github.steveice10.packetlib.Client;
 import com.github.steveice10.packetlib.tcp.TcpSessionFactory;
 import network.meikai.mc.uuzselfplaybot.command.CommandHandler;
+import network.meikai.mc.uuzselfplaybot.config.ConfigHandler;
 import network.meikai.mc.uuzselfplaybot.network.KeepAlivePacket;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.core.config.ConfigurationAware;
+import org.apache.logging.log4j.core.config.Configurator;
 import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.AnsiConsole;
 import picocli.CommandLine;
@@ -44,13 +48,13 @@ public class YuyukoSelfPlayBot {
         );
         System.out.println(logPrefix + Ansi.ansi().fgBright(Ansi.Color.CYAN).a("Author: 幽幽子 | QQ: 3558168775 | Github: SaigyoujiYuyuko233 \n").reset());
 
-        // 加载cli配置
-        CommandLine commandLine = new CommandLine(new CliConfig());
-        int ret = commandLine.execute(arg);
+        // 加载配置
+        GlobalVars.MAIN_LOGGER.info("Loading config file...");
+        GlobalVars.arg = arg;
+        new ConfigHandler().handle();
 
-        if (ret != 0) {
-            System.exit(ret);
-        }
+        // set log level
+        Configurator.setRootLevel(Level.getLevel(GlobalVars.logLevel));
 
         GlobalVars.MAIN_LOGGER.info("Using BotName @" + GlobalVars.BOTNAME);
         GlobalVars.MAIN_LOGGER.info("Dst Server - " + GlobalVars.HOST + ":" + GlobalVars.PORT);

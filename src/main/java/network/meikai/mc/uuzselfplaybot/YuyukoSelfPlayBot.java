@@ -6,15 +6,11 @@ import com.github.steveice10.packetlib.Client;
 import com.github.steveice10.packetlib.tcp.TcpSessionFactory;
 import network.meikai.mc.uuzselfplaybot.command.CommandHandler;
 import network.meikai.mc.uuzselfplaybot.config.ConfigHandler;
-import network.meikai.mc.uuzselfplaybot.network.KeepAlivePacket;
 import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.core.config.ConfigurationAware;
 import org.apache.logging.log4j.core.config.Configurator;
 import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.AnsiConsole;
-import picocli.CommandLine;
 
-import java.io.IOError;
 import java.io.IOException;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
@@ -91,17 +87,6 @@ public class YuyukoSelfPlayBot {
         // connect
         GlobalVars.MAIN_LOGGER.info("Try to connect to server...");
         GlobalVars.CLIENT.getSession().connect();
-
-        if ( !GlobalVars.CLIENT.getSession().isConnected() ) {
-            GlobalVars.MAIN_LOGGER.error("Connect timeout!");
-            System.exit(-2);
-        }
-
-        // KeepAlive
-        Thread keepAlive = new Thread(new KeepAlivePacket());
-        keepAlive.setDaemon(true);
-        keepAlive.setName("KeepAlive");
-        keepAlive.start();
 
         // input handler
         Thread commandHandler = new Thread(new CommandHandler());

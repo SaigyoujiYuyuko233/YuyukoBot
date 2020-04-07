@@ -16,7 +16,7 @@ public class KeepAlivePacket implements Runnable{
             }
 
             try {
-                Thread.sleep(5000);
+                Thread.sleep(GlobalVars.keepaliveTimeout);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

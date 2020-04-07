@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99407164-ece8-49bd-93c3-1a02864eb1f0" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/YuyukoSelfPlayBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/YuyukoSelfPlayBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uuzselfplaybot.iws" beforeDir="false" afterPath="$PROJECT_DIR$/uuzselfplaybot.iws" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -72,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/YuyukoSelfPlayBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="72" column="30" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+            <state relative-caret-position="391">
+              <caret line="76" column="9" lean-forward="true" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,6 +93,15 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -157,7 +167,6 @@
         <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/units/PlayerInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/EventHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/Events/ServerPlayerListEntryPacketHandler.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/command/CommandHandler.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config.ini" />
         <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/GlobalVars.java" />
@@ -165,6 +174,7 @@
         <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/config/ConfigHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/network/KeepAlivePacket.java" />
         <option value="$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/YuyukoSelfPlayBot.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -417,12 +427,12 @@
       <workItem from="1585752695533" duration="16111000" />
       <workItem from="1585809436129" duration="68293000" />
       <workItem from="1585989674225" duration="23603000" />
-      <workItem from="1586179311086" duration="10795000" />
+      <workItem from="1586179311086" duration="11391000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154831000" />
+    <option name="totallyTimeSpent" value="155427000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -437,7 +447,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49614793" visible="true" weight="0.20628998" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49614793" visible="true" weight="0.20628998" />
       <window_info id="Structure" order="1" sideWeight="0.5046296" side_tool="true" weight="0.20415778" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -458,7 +468,7 @@
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Run" order="13" sideWeight="0.4989339" visible="true" weight="0.29609543" />
+      <window_info anchor="bottom" id="Run" order="13" sideWeight="0.4989339" visible="true" weight="0.29609543" />
       <window_info anchor="bottom" id="TODO" order="14" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -729,13 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="172" selection-start-line="172" selection-end-line="172" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/steveice10/packetlib/1.2/packetlib-1.2.jar!/com/github/steveice10/packetlib/Session.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -840,11 +843,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/network/meikai/mc/uuzselfplaybot/YuyukoSelfPlayBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="72" column="30" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+        <state relative-caret-position="391">
+          <caret line="76" column="9" lean-forward="true" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
         </state>
       </provider>
     </entry>

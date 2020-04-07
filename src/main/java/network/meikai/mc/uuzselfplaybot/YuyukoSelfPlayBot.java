@@ -14,6 +14,7 @@ import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.AnsiConsole;
 import picocli.CommandLine;
 
+import java.io.IOError;
 import java.io.IOException;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
@@ -79,15 +80,17 @@ public class YuyukoSelfPlayBot {
         GlobalVars.TCP_SESSION_FACTORY = new TcpSessionFactory();
         GlobalVars.CLIENT = new Client(GlobalVars.HOST, GlobalVars.PORT, GlobalVars.PROTOCOL, GlobalVars.TCP_SESSION_FACTORY);
 
-        GlobalVars.MAIN_LOGGER.info("Try to connect to server...");
-        GlobalVars.CLIENT.getSession().connect();
-
+        // setting timeout
         GlobalVars.CLIENT.getSession().setConnectTimeout(GlobalVars.connectTimeout);
         GlobalVars.CLIENT.getSession().setReadTimeout(GlobalVars.readTimeout);
         GlobalVars.CLIENT.getSession().setWriteTimeout(GlobalVars.writeTimeout);
 
         // Network handler
         GlobalVars.CLIENT.getSession().addListener(GlobalVars.eventHandler);
+
+        // connect
+        GlobalVars.MAIN_LOGGER.info("Try to connect to server...");
+        GlobalVars.CLIENT.getSession().connect();
 
         if ( !GlobalVars.CLIENT.getSession().isConnected() ) {
             GlobalVars.MAIN_LOGGER.error("Connect timeout!");

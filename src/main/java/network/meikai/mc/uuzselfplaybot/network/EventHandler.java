@@ -3,6 +3,8 @@ package network.meikai.mc.uuzselfplaybot.network;
 import com.github.steveice10.mc.protocol.packet.ingame.server.*;
 import com.github.steveice10.mc.protocol.packet.ingame.server.entity.player.ServerPlayerHealthPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.entity.player.ServerPlayerPositionRotationPacket;
+import com.github.steveice10.packetlib.event.session.DisconnectedEvent;
+import com.github.steveice10.packetlib.event.session.DisconnectingEvent;
 import com.github.steveice10.packetlib.event.session.PacketReceivedEvent;
 import com.github.steveice10.packetlib.event.session.SessionAdapter;
 import network.meikai.mc.uuzselfplaybot.network.Events.*;
@@ -63,8 +65,27 @@ public class EventHandler extends SessionAdapter {
             }
 
         }
-
-
+        // end of if
     }
+    // end of packetReceived
+
+    @Override
+    public void disconnected(DisconnectedEvent event) {
+        try {
+            // if that is not normal disconnect/server close
+            if ( event.getCause() != null ) throw event.getCause(); System.exit(-5);
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+    }
+
+//    @Override
+//    public void disconnecting(DisconnectingEvent event) {
+//        try {
+//            throw event.getCause();
+//        } catch (Throwable throwable) {
+//            throwable.printStackTrace();
+//        }
+//    }
 
 }

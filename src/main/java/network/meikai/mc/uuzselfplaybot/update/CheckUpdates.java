@@ -1,4 +1,4 @@
-package update;
+package network.meikai.mc.uuzselfplaybot.update;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;

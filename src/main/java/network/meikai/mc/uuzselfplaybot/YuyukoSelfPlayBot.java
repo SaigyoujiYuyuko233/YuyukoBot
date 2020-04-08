@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.core.config.Configurator;
 import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.AnsiConsole;
-import update.CheckUpdates;
+import network.meikai.mc.uuzselfplaybot.update.CheckUpdates;
 
 import java.io.IOException;
 import java.util.jar.Attributes;

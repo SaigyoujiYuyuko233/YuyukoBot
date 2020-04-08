@@ -1,6 +1,7 @@
 package network.meikai.mc.uuzselfplaybot.update;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import network.meikai.mc.uuzselfplaybot.GlobalVars;
 import org.fusesource.jansi.Ansi;
 
@@ -39,9 +40,7 @@ public class CheckUpdates {
             reader.close();
 
             // parse json
-            String latest = (String) JSON.parseObject(
-                    JSON.parseArray(response.toString()).getObject(0, Object.class).toString()
-            ).get("tag_name");
+            String latest = JSON.parseArray(response.toString()).getJSONObject(0).getString("tag_name");
 
             if ( GlobalVars.GIT_BRANCH == null || !GlobalVars.GIT_BRANCH.equals(latest) ) {
                 System.out.println("[" + Ansi.ansi().fgBright(Ansi.Color.GREEN).a("+").reset() + "] "

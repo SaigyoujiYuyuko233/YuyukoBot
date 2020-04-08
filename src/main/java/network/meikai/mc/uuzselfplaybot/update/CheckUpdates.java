@@ -45,14 +45,14 @@ public class CheckUpdates {
 
             if ( GlobalVars.GIT_BRANCH == null || !GlobalVars.GIT_BRANCH.equals(latest) ) {
                 System.out.println("[" + Ansi.ansi().fgBright(Ansi.Color.GREEN).a("+").reset() + "] "
-                        + Ansi.ansi().fgBright(Ansi.Color.BLUE).a("新版本已发布!").reset() + " 最新版本 [" + latest + "]");
+                        + Ansi.ansi().fgBright(Ansi.Color.CYAN).a("新版本已发布!").reset() + " 最新版本 [" + latest + "]");
                 System.out.println("[" + Ansi.ansi().fgBright(Ansi.Color.GREEN).a("+").reset() + "] "
-                        + Ansi.ansi().fgBright(Ansi.Color.BLUE).a("发布地址: https://gitlab.uuzdream.cn/uuz/uuzselfplaybot/-/releases").reset());
+                        + Ansi.ansi().fgBright(Ansi.Color.CYAN).a("发布地址: https://gitlab.uuzdream.cn/uuz/uuzselfplaybot/-/releases").reset());
             }
 
             if ( GlobalVars.GIT_BRANCH != null && GlobalVars.GIT_BRANCH.equals(latest) ) {
                 System.out.println("[" + Ansi.ansi().fgBright(Ansi.Color.GREEN).a("+").reset() + "] "
-                        + Ansi.ansi().fgBright(Ansi.Color.BLUE).a("您使用的是最新版本!").reset() + " [" + latest + "]");
+                        + Ansi.ansi().fgBright(Ansi.Color.CYAN).a("您使用的是最新版本!").reset() + " [" + latest + "]");
             }
 
         } catch (IOException e) {

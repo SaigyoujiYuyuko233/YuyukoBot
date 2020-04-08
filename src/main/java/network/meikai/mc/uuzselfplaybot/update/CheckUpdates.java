@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 public class CheckUpdates {
 
@@ -30,7 +31,7 @@ public class CheckUpdates {
             }
 
             BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(connection.getInputStream()));
+                    new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
             String inputLine;
             StringBuilder response = new StringBuilder();
 

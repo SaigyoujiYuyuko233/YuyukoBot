@@ -20,6 +20,9 @@ public class YuyukoSelfPlayBot {
 
     public static void main(String[] arg) throws IOException {
 
+        // sys config
+        System.setProperty("file.encoding", "UTF-8");
+
         // read version
         Manifest mf = new Manifest();
         mf.read(Thread.currentThread().getContextClassLoader().getResourceAsStream("META-INF/MANIFEST.MF"));

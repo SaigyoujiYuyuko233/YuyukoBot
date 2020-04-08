@@ -1,7 +1,6 @@
 package network.meikai.mc.uuzselfplaybot.update;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import network.meikai.mc.uuzselfplaybot.GlobalVars;
 import org.fusesource.jansi.Ansi;
 
@@ -48,6 +47,11 @@ public class CheckUpdates {
                     + Ansi.ansi().fgBright(Ansi.Color.BLUE).a("新版本已发布!").reset() + " 最新版本 [" + latest + "]");
             System.out.println("[" + Ansi.ansi().fgBright(Ansi.Color.GREEN).a("+").reset() + "] "
                     + Ansi.ansi().fgBright(Ansi.Color.BLUE).a("发布地址: https://gitlab.uuzdream.cn/uuz/uuzselfplaybot/-/releases").reset());
+        }
+
+        if ( GlobalVars.GIT_BRANCH != null && GlobalVars.GIT_BRANCH.equals(latest) ) {
+            System.out.println("[" + Ansi.ansi().fgBright(Ansi.Color.GREEN).a("+").reset() + "] "
+                    + Ansi.ansi().fgBright(Ansi.Color.BLUE).a("您使用的是最新版本!").reset() + " [" + latest + "]");
         }
 
         return true;

@@ -19,6 +19,7 @@ public class GlobalVars {
     public static String GIT_BRANCH = "";
     public static String GIT_REVERSION = "";
     public static String BUILD = "";
+    public static final String RELEASE_URL = "https://gitlab.uuzdream.cn/api/v4/projects/4/releases";
 
     /*
      * Configuration

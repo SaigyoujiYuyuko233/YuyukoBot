@@ -168,5 +168,12 @@
             <artifactId>ini4j</artifactId>
             <version>0.5.4</version>
         </dependency>
+
+        <!--json-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.61</version>
+        </dependency>
     </dependencies>
 </project>

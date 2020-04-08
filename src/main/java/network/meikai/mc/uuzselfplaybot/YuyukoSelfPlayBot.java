@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.core.config.Configurator;
 import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.AnsiConsole;
+import update.CheckUpdates;
 
 import java.io.IOException;
 import java.util.jar.Attributes;
@@ -44,25 +45,30 @@ public class YuyukoSelfPlayBot {
             "Version: " + GlobalVars.VERSION + "(" + GlobalVars.GIT_BRANCH + ") Git-" + GlobalVars.GIT_REVERSION + " Build: " + GlobalVars.BUILD
             ).reset()
         );
-        System.out.println(logPrefix + Ansi.ansi().fgBright(Ansi.Color.CYAN).a("Author: 幽幽子 | QQ: 3558168775 | Github: SaigyoujiYuyuko233 \n").reset());
+        System.out.println(logPrefix + Ansi.ansi().fgBright(Ansi.Color.CYAN).a("Author: 幽幽子 | QQ: 3558168775 | Github: SaigyoujiYuyuko233").reset());
+        System.out.println(logPrefix + Ansi.ansi().fgBright(Ansi.Color.CYAN).a("给幽幽子投食: https://afdian.net/@SaigyoujiYuyuko").reset());
+
+        // 检查更新
+        new CheckUpdates().check();
+        System.out.println("\n");
 
         // 加载配置
-        GlobalVars.MAIN_LOGGER.info("Loading config file...");
+        GlobalVars.MAIN_LOGGER.info("加载配置文件...");
         GlobalVars.arg = arg;
         new ConfigHandler().handle();
 
         // set log level
         Configurator.setRootLevel(Level.getLevel(GlobalVars.logLevel));
 
-        GlobalVars.MAIN_LOGGER.info("Using BotName @" + GlobalVars.BOTNAME);
-        GlobalVars.MAIN_LOGGER.info("Dst Server - " + GlobalVars.HOST + ":" + GlobalVars.PORT);
+        GlobalVars.MAIN_LOGGER.info("使用机器人名字 @" + GlobalVars.BOTNAME);
+        GlobalVars.MAIN_LOGGER.info("目标服务器 - " + GlobalVars.HOST + ":" + GlobalVars.PORT);
 
-        GlobalVars.MAIN_LOGGER.info("Initiate the bot...");
+        GlobalVars.MAIN_LOGGER.info("初始化机器人...");
 
         // if online mode is enable
         if ( GlobalVars.isOnline ) {
             try {
-                GlobalVars.MAIN_LOGGER.info("Online mode enable! Try to login...");
+                GlobalVars.MAIN_LOGGER.info("正版验证启用! 尝试登陆...");
                 GlobalVars.PROTOCOL = new MinecraftProtocol(GlobalVars.onlineUsername, GlobalVars.onlinePassword);
             } catch (RequestException e) {
                 GlobalVars.MAIN_LOGGER.error(e.getMessage());
@@ -85,7 +91,7 @@ public class YuyukoSelfPlayBot {
         GlobalVars.CLIENT.getSession().addListener(GlobalVars.eventHandler);
 
         // connect
-        GlobalVars.MAIN_LOGGER.info("Try to connect to server...");
+        GlobalVars.MAIN_LOGGER.info("尝试连接到服务器...");
         GlobalVars.CLIENT.getSession().connect();
 
         // input handler

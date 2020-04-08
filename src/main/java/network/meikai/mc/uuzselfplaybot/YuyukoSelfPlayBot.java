@@ -45,6 +45,9 @@ public class YuyukoSelfPlayBot {
             ).reset()
         );
         System.out.println(logPrefix + Ansi.ansi().fgBright(Ansi.Color.CYAN).a("Author: 幽幽子 | QQ: 3558168775 | Github: SaigyoujiYuyuko233 \n").reset());
+        // 检查更新
+        new CheckUpdates().check();
+        System.out.println("\n");
 
         // 加载配置
         GlobalVars.MAIN_LOGGER.info("Loading config file...");

@@ -1,4 +1,4 @@
-image: maven
+image: maven:3.6.3-jdk-8
 
 stages:
   - 构建
@@ -14,7 +14,7 @@ cache:
 Build:
   stage: 构建
   script:
-    - mvn $MAVEN_CLI_OPTS install
+    - mvn $MAVEN_CLI_OPTS clean install
     - mvn $MAVEN_CLI_OPTS dependency:tree
     - mvn $MAVEN_CLI_OPTS clean package
   artifacts:

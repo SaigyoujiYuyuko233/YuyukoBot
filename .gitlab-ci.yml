@@ -15,6 +15,7 @@ Build:
   stage: 构建
   script:
     - mvn $MAVEN_CLI_OPTS install
+    - mvn $MAVEN_CLI_OPTS dependency:tree
     - mvn $MAVEN_CLI_OPTS clean package
   artifacts:
     paths:

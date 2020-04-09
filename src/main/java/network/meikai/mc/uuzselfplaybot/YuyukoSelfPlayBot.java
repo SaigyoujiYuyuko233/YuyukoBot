@@ -97,6 +97,12 @@ public class YuyukoSelfPlayBot {
         GlobalVars.MAIN_LOGGER.info("尝试连接到服务器...");
         GlobalVars.CLIENT.getSession().connect();
 
+        if ( !GlobalVars.CLIENT.getSession().isConnected() ) {
+            GlobalVars.MAIN_LOGGER.error("连接到服务器时出错!");
+            GlobalVars.MAIN_LOGGER.error("请截图上方部分给他人以寻求帮助！");
+            System.exit(-1);
+        }
+
         // input handler
         Thread commandHandler = new Thread(new CommandHandler());
         commandHandler.setDaemon(false);

@@ -26,27 +26,27 @@ public class EventHandler extends SessionAdapter {
 
         // ServerJoinGamePacket - Handler
         if ( evt.getPacket() instanceof ServerJoinGamePacket ) {
-            serverJoinGamePacketHandler.handle(evt, (ServerJoinGamePacket) evt.getPacket());
+            serverJoinGamePacketHandler.handle(evt, evt.getPacket());
         }
 
         // ServerPlayerPositionRotationPacket - Handle
         if ( evt.getPacket() instanceof ServerPlayerPositionRotationPacket) {
-            serverPlayerPositionRotationPacketHandler.handle(evt, (ServerPlayerPositionRotationPacket) evt.getPacket());
+            serverPlayerPositionRotationPacketHandler.handle(evt, evt.getPacket());
         }
 
         // ServerChatPacketHandler - Handle
         if ( evt.getPacket() instanceof ServerChatPacket) {
-            serverChatPacketHandler.handle(evt, (ServerChatPacket) evt.getPacket());
+            serverChatPacketHandler.handle(evt, evt.getPacket());
         }
 
         // ServerDisconnectPacketHandler - Handle
         if ( evt.getPacket() instanceof ServerDisconnectPacket) {
-            serverDisconnectPacketHandler.handle(evt, (ServerDisconnectPacket) evt.getPacket());
+            serverDisconnectPacketHandler.handle(evt, evt.getPacket());
         }
 
         // ServerPlayerListEntryPacketHandler - Handle
         if ( evt.getPacket() instanceof ServerPlayerListEntryPacket) {
-            serverPlayerListEntryPacketHandler.handle(evt, (ServerPlayerListEntryPacket) evt.getPacket());
+            serverPlayerListEntryPacketHandler.handle(evt, evt.getPacket());
 //            EVENT_LOGGER.info(evt.getPacket());
         }
 

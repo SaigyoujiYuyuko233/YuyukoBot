@@ -6,7 +6,8 @@
 
     <groupId>network.meikai.mc</groupId>
     <artifactId>uuz-selfplay-bot</artifactId>
-    <version>0.2.4-SNAPSHOT</version>
+    <!--这个指的是即将版本 已更新过-->
+    <version>0.2.5-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>

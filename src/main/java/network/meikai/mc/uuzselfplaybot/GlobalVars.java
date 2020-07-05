@@ -26,6 +26,9 @@ public class GlobalVars {
      */
     public static String[] arg;
 
+    // game version
+    public static String GameVersion = "1.15";
+
     // connection
     public static String HOST;
     public static int PORT;

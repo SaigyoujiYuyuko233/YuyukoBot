@@ -8,6 +8,9 @@ import java.util.concurrent.Callable;
 public class CliConfig implements Callable<Integer> {
 
     // Bot
+    @CommandLine.Option(names = {"-gv", "--game-version"}, description = "游戏版本")
+    private String gameVersion;
+
     @CommandLine.Option(names = {"-n", "--name"}, description = "机器人名字")
     private String botname;
 
@@ -51,6 +54,7 @@ public class CliConfig implements Callable<Integer> {
         // 已经被赋值过  所以说如果不一样 则代表cli参数不一样
 
         // Bot
+        GlobalVars.GameVersion = gameVersion != null && !gameVersion.equals(GlobalVars.GameVersion) ? gameVersion : GlobalVars.GameVersion;
         GlobalVars.BOTNAME = botname != null && !botname.equals(GlobalVars.BOTNAME) ? botname : GlobalVars.BOTNAME;
         GlobalVars.logLevel =  logLevel != null && !logLevel.equals(GlobalVars.logLevel) ? logLevel : GlobalVars.logLevel;
 

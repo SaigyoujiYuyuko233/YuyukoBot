@@ -20,7 +20,7 @@ public class ConfigHandler {
              */
             File configFile = new File("config.ini");
             if ( !configFile.isFile() ) {
-                GlobalVars.MAIN_LOGGER.info("Init Config File...");
+                GlobalVars.MAIN_LOGGER.info("生成配置文件...");
                 Files.copy(YuyukoSelfPlayBot.class.getResourceAsStream("/config.ini"), configFile.toPath());
             }
 
@@ -31,6 +31,7 @@ public class ConfigHandler {
             config.load(configFile);
 
             // Bot
+            GlobalVars.GameVersion = config.get("Bot", "version") == null ? "1.15" : config.get("Bot", "version", String.class);
             GlobalVars.BOTNAME = config.get("Bot", "name") == null ? "YuyukoBot" : config.get("Bot", "name", String.class);
             GlobalVars.logLevel = config.get("Bot", "log") == null ? "INFO" : config.get("Bot", "log", String.class);
 

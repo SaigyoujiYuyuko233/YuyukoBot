@@ -43,7 +43,7 @@
 
                         <configuration>
                             <!--suppress UnresolvedMavenProperty -->
-                            <finalName>YuyukoBot-${project.version}-Build-${CI_PIPELINE_ID}</finalName>
+                            <finalName>YuyukoBotCore</finalName>
                             <minimizeJar>false</minimizeJar>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
 
@@ -105,14 +105,10 @@
         <dependency>
             <groupId>com.github.steveice10</groupId>
             <artifactId>mcprotocollib</artifactId>
-            <version>1.12.2-2</version>
+            <version>1.12.2-1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/MCProtocolLib/1.12.2.jar</systemPath>
         </dependency>
-        <dependency>
-            <groupId>com.github.steveice10</groupId>
-            <artifactId>opennbt</artifactId>
-            <version>1.3</version>
-        </dependency>
-
 
         <dependency>
             <groupId>org.fusesource.jansi</groupId>

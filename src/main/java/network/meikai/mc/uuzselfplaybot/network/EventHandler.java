@@ -7,6 +7,7 @@ import com.github.steveice10.packetlib.event.session.DisconnectedEvent;
 import com.github.steveice10.packetlib.event.session.DisconnectingEvent;
 import com.github.steveice10.packetlib.event.session.PacketReceivedEvent;
 import com.github.steveice10.packetlib.event.session.SessionAdapter;
+import network.meikai.mc.uuzselfplaybot.GlobalVars;
 import network.meikai.mc.uuzselfplaybot.network.Events.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -73,19 +74,11 @@ public class EventHandler extends SessionAdapter {
     public void disconnected(DisconnectedEvent event) {
         try {
             // if that is not normal disconnect/server close
+            GlobalVars.MAIN_LOGGER.error("断开连接! 原因: " + event.getReason());
             if ( event.getCause() != null ) throw event.getCause(); System.exit(-5);
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
     }
-
-//    @Override
-//    public void disconnecting(DisconnectingEvent event) {
-//        try {
-//            throw event.getCause();
-//        } catch (Throwable throwable) {
-//            throwable.printStackTrace();
-//        }
-//    }
 
 }

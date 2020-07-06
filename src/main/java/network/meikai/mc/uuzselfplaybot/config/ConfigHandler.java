@@ -12,6 +12,13 @@ import java.nio.file.Files;
 
 public class ConfigHandler {
 
+    private void initConfigFile(File configFile) throws IOException {
+        if ( !configFile.isFile() ) {
+            GlobalVars.MAIN_LOGGER.info("生成配置文件...");
+            Files.copy(YuyukoSelfPlayBot.class.getResourceAsStream("/config.ini"), configFile.toPath());
+        }
+    }
+
     public boolean handle() {
         try {
 
@@ -19,10 +26,7 @@ public class ConfigHandler {
              * 判断配置文件是否存在
              */
             File configFile = new File("config.ini");
-            if ( !configFile.isFile() ) {
-                GlobalVars.MAIN_LOGGER.info("生成配置文件...");
-                Files.copy(YuyukoSelfPlayBot.class.getResourceAsStream("/config.ini"), configFile.toPath());
-            }
+            this.initConfigFile(configFile);
 
             /*
              * 加载配置文件
@@ -64,6 +68,19 @@ public class ConfigHandler {
             System.exit(-3);
         }
         return true;
+    }
+
+    public static Object getSpecificConfig(String sectionName, String Key) throws IOException {
+        File configFile = new File("config.ini");
+
+        if ( !configFile.isFile() ) {
+            Files.copy(YuyukoSelfPlayBot.class.getResourceAsStream("/config.ini"), configFile.toPath());
+        }
+
+        Ini config = new Ini();
+        config.load(configFile);
+
+        return config.get(sectionName, Key);
     }
 
 }

@@ -12,7 +12,12 @@ import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.AnsiConsole;
 import network.meikai.mc.uuzselfplaybot.update.CheckUpdates;
 
+import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
@@ -53,7 +58,7 @@ public class YuyukoSelfPlayBot {
 
         // 检查更新
         new CheckUpdates().check();
-        System.out.println("\n");
+        System.out.println("");
 
         // 加载配置
         GlobalVars.MAIN_LOGGER.info("加载配置文件...");
@@ -108,7 +113,6 @@ public class YuyukoSelfPlayBot {
         commandHandler.setDaemon(false);
         commandHandler.setName("CommandHandler");
         commandHandler.start();
-
 
     }
 

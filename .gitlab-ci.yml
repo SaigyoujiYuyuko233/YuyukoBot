@@ -22,4 +22,4 @@ Build:
     - zip -r9 ./YuyukoBot.zip ./
   artifacts:
     paths:
-      - $CI_PROJECT_DIR/YuyukoBot.zip
+      - $CI_PROJECT_DIR/artifacts/YuyukoBot.zip

@@ -4,11 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.*;
-import java.util.Arrays;
 
 public class LaunchWrapper {
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, URISyntaxException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
         URLClassLoader classLoader = new URLClassLoader(new URL[]{
                 new File("YuyukoBotCore.jar").toURI().toURL(),
         });

@@ -1,4 +1,4 @@
-image: maven:3.6.3-jdk-8
+image: docker-registry.uuzdream.cn/ci-env/maven:3.6.3-jdk-8
 
 stages:
   - 构建
@@ -14,9 +14,12 @@ cache:
 Build:
   stage: 构建
   script:
-    - mvn $MAVEN_CLI_OPTS clean install
-    - mvn $MAVEN_CLI_OPTS dependency:tree
     - mvn $MAVEN_CLI_OPTS clean package
+    - cp -r ./MCProtocolLib ./artifacts
+    - cp ./*.cmd ./artifacts
+    - cp ./*.sh ./artifacts
+    - cd artifacts
+    - zip -r9 ./YuyukoBot.zip ./
   artifacts:
     paths:
-      - $CI_PROJECT_DIR/target/*.jar
+      - $CI_PROJECT_DIR/artifacts/YuyukoBot.zip

@@ -15,8 +15,7 @@ Build:
   stage: 构建
   script:
     - mvn $MAVEN_CLI_OPTS clean package
-    - mv ./Core/target/YuyukoBotCore.jar ./
-    - mv ./LaunchWrapper/target/YuyukoBot-LaunchWrapper.jar ./
+    - cp -r ./MCProtocolLib ./artifacts
     - zip -r9 ./YuyukoBot.zip ./YuyukoBotCore.jar ./YuyukoBot-LaunchWrapper.jar ./*.cmd ./*.sh ./MCProtocolLib
   artifacts:
     paths:

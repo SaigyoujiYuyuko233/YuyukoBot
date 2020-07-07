@@ -15,7 +15,7 @@ public class ConfigHandler {
     private void initConfigFile(File configFile) throws IOException {
         if ( !configFile.isFile() ) {
             GlobalVars.MAIN_LOGGER.info("生成配置文件...");
-            Files.copy(YuyukoSelfPlayBot.class.getResourceAsStream("/config.ini"), configFile.toPath());
+            Files.copy(YuyukoSelfPlayBot.class.getResourceAsStream("/src/main/resources/config.ini"), configFile.toPath());
         }
     }
 
@@ -25,7 +25,7 @@ public class ConfigHandler {
             /*
              * 判断配置文件是否存在
              */
-            File configFile = new File("config.ini");
+            File configFile = new File("src/main/resources/config.ini");
             this.initConfigFile(configFile);
 
             /*
@@ -71,10 +71,10 @@ public class ConfigHandler {
     }
 
     public static Object getSpecificConfig(String sectionName, String Key) throws IOException {
-        File configFile = new File("config.ini");
+        File configFile = new File("src/main/resources/config.ini");
 
         if ( !configFile.isFile() ) {
-            Files.copy(YuyukoSelfPlayBot.class.getResourceAsStream("/config.ini"), configFile.toPath());
+            Files.copy(YuyukoSelfPlayBot.class.getResourceAsStream("/src/main/resources/config.ini"), configFile.toPath());
         }
 
         Ini config = new Ini();

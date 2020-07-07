@@ -4,10 +4,18 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.*;
+import java.util.jar.Attributes;
+import java.util.jar.JarFile;
+import java.util.jar.Manifest;
 
 public class LaunchWrapper {
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, URISyntaxException {
+        JarFile mainJar = new JarFile(new File(LaunchWrapper.class.getProtectionDomain().getCodeSource().getLocation().toURI()));
+        Manifest mf = mainJar.getManifest();
+        Attributes mfAttributes = mf.getMainAttributes();
+        System.out.println("启动器版本: " + mfAttributes.getValue("implementation-version"));
+
         URLClassLoader classLoader = new URLClassLoader(new URL[]{
                 new File("YuyukoBotCore.jar").toURI().toURL(),
         });

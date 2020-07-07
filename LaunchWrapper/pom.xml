@@ -38,6 +38,7 @@
                         <configuration>
                             <!--suppress UnresolvedMavenProperty -->
                             <finalName>YuyukoBot-LaunchWrapper</finalName>
+                            <outputDirectory>${project.parent.basedir}/artifacts</outputDirectory>
                             <minimizeJar>false</minimizeJar>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
 

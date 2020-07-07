@@ -49,6 +49,7 @@
                         <configuration>
                             <!--suppress UnresolvedMavenProperty -->
                             <finalName>YuyukoBotCore</finalName>
+                            <outputDirectory>${project.parent.basedir}/artifacts</outputDirectory>
                             <minimizeJar>false</minimizeJar>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
 

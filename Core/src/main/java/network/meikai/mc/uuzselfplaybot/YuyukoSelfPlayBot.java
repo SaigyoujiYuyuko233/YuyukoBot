@@ -14,11 +14,8 @@ import network.meikai.mc.uuzselfplaybot.update.CheckUpdates;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.net.URL;
-import java.net.URLClassLoader;
 import java.util.jar.Attributes;
+import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 
 public class YuyukoSelfPlayBot {
@@ -29,8 +26,8 @@ public class YuyukoSelfPlayBot {
         System.setProperty("file.encoding", "UTF-8");
 
         // read version
-        Manifest mf = new Manifest();
-        mf.read(Thread.currentThread().getContextClassLoader().getResourceAsStream("META-INF/MANIFEST.MF"));
+        JarFile mainJar = new JarFile(new File(YuyukoSelfPlayBot.class.getProtectionDomain().getCodeSource().getLocation().getPath()));
+        Manifest mf = mainJar.getManifest();
         Attributes mfAttributes = mf.getMainAttributes();
 
         GlobalVars.VERSION = mfAttributes.getValue("implementation-version");

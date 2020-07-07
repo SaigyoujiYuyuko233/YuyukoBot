@@ -14,9 +14,8 @@ cache:
 Build:
   stage: 构建
   script:
-    - mvn $MAVEN_CLI_OPTS clean install
-    - mvn $MAVEN_CLI_OPTS dependency:tree
     - mvn $MAVEN_CLI_OPTS clean package
+    - zip -r ./YuyukoBot.zip ./Core/target/YuyukoBotCore.jar ./LaunchWapper/target/YuyukoBotCore.jar ./*.cmd ./*.sh ./MCProtocolLib
   artifacts:
     paths:
-      - $CI_PROJECT_DIR/target/*.jar
+      - $CI_PROJECT_DIR/YuyukoBot.zip
